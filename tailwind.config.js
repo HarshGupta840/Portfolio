@@ -21,7 +21,7 @@ module.exports = {
         "border-color": `var(--border-color)`
       },
       fontSize: {
-        h1: ["56px"],
+        h1: ["52px"],
         h2: ["50px"],
         h3: ["24px"],
         tiny: ["12px"],

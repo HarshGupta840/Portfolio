@@ -33,6 +33,10 @@ body {
   --container-color: hsl(0, 0%, 93%);
   --border-color: hsl(0, 0%, 87%);
 }
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 h1,
 h2,
 h3,
@@ -50,16 +54,18 @@ textarea {
   border: none;
   outline: none;
 }
-.inset-block {
-  inset-block: 0;
+.unset {
+  all: unset;
+}
+.nav__icon {
+  font-size: 24px;
+  margin-inline: auto;
+}
+@media (min-width: 640px) {
 }
 
 @media (min-width: 1024px) {
-  .unset {
-    all: unset;
-  }
-  .nav__icon {
-    font-size: 24px;
-    margin-inline: auto;
+  .inset-block {
+    inset-block: 0;
   }
 }
