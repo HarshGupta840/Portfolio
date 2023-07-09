@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Balancer from "react-wrap-balancer";
 import Text from "../component/textAnimation";
+import { PiCoffeeFill } from "react-icons/pi";
 type Props = {};
 
 const Home = ({}: Props) => {
@@ -25,7 +26,7 @@ const Home = ({}: Props) => {
               </span>
               <Text />
             </h1>
-            <p className="hero__description leading-loose mx-32px my-[16px] mb-[40px] text-[13px] md:text-[15px] xl:text[19px] 2xl:text-[22px]">
+            <p className="hero__description leading-loose mx-32px my-[16px] mb-[40px] text-title-color text-[13px] md:text-[15px] xl:text[19px] 2xl:text-[22px]">
               <Balancer>
                 Experienced MERN Stack and Next.js developer with 1 years of
                 experience. Skilled in building robust web applications,
@@ -35,17 +36,22 @@ const Home = ({}: Props) => {
                 expectations.
               </Balancer>
             </p>
+            <div className="flex justify-between sm:justify-evenly md:justify-between flex-row ">
+              <Link
+                href={"/about"}
+                className="inline-block text-title-color border-[1px] border-solid border-first-color p-[12px_62px_12px_23px] sm:p-[11px_66px_12px_30px] md:p-[12px_66px_14px_32px] lg:p-[14px_67px_14px_33px] xl:p-[15px_70px_15px_35px] rounded-[35px] font-medium relative mb-10px  sm:text-[14px] md:text-[15px] xl:text-[16px] text-[11px]"
+              >
+                More About Me
+                <span className="button__icon bg-first-color !text-white absolute right-0 w-[48px] sm:w-[55px] rounded-[50%] top-[0px] bottom-[0px] text-center text-lg flex justify-center items-center">
+                  <FaArrowRight className="" />
+                </span>
+              </Link>
 
-            <Link
-              href={"/about"}
-              className="inline-block text-title-color border-[1px] border-solid border-first-color p-[15px_70px_15px_35px] rounded-[35px] font-medium relative mb-10px"
-            >
-              {" "}
-              More About Me{" "}
-              <span className="button__icon bg-first-color !text-white absolute right-0 w-[55px] rounded-[50%] top-[0px] bottom-[0px] text-center text-lg flex justify-center items-center">
-                <FaArrowRight className="" />
-              </span>
-            </Link>
+              <button className="text-title-color border-[1px] border-solid border-first-color w-[155px] sm:w-[190px] sm:text-[14px] md:w-[200px] lg:w-[220px]  rounded-[35px] font-medium relative mb-10px bg-first-color hover:bg-transparent transition-all duration-[0.3s] ease-linear items-center text-center flex justify-center gap-2 md:text-[15px] xl:text-[16px] text-[12px]">
+                <span>Buy Me a Coffee </span>
+                <PiCoffeeFill className="" />
+              </button>
+            </div>
           </div>
         </div>
         <div className="color_block hidden md:inline-block absolute bg-first-color w-[100%] h-[100%] left-[-80%]"></div>

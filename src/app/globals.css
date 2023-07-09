@@ -2,29 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
 :root {
   --first-color: hsl(271, 76%, 53%);
   --title-color: hsl(0, 0%, 40%);
@@ -33,9 +10,35 @@ body {
   --container-color: hsl(0, 0%, 93%);
   --border-color: hsl(0, 0%, 87%);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --first-color: hsl(271, 76%, 53%);
+    --title-color: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 80%);
+    --body-color: hsl(0, 0%, 7%);
+    --container-color: hsl(0, 1%, 17%);
+    --border-color: hsl(0, 0%, 15%);
+  }
+}
+
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background-color: var(--body-color);
+}
+body::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 4px;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--first-color);
+  border-radius: 4px;
 }
 h1,
 h2,

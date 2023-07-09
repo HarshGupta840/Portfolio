@@ -17,6 +17,8 @@ const Text = ({}: Props) => {
           3000,
           "Full Stack Developer",
           3000,
+          "Freelancer",
+          3000,
         ]}
         wrapper="span"
         speed={50}
