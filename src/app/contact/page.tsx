@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import {
@@ -26,12 +27,22 @@ const Contact = ({}: Props) => {
               {" "}
               Dont be shy !
             </h3>
-            <p className="contact__description text-title-color text-[16px] leading-[1.6] mb-[20px]">
+            <p className="contact__description text-title-color text-[16px] leading-[1.6] mb-[2px]">
               <Balancer />
               Feel free to get in touch with me.I am always open to discussing
               new projects, creative ideas or oppportunities to be part of your
               visions.
             </p>
+            <div>
+              <Link
+                className="font-medium text-[18px] p-[8px] m-[8px] text-title-color hover:text-first-color"
+                href={"https://calendly.com/harshgupta840g/introductory-call"}
+                target="_blank"
+                replace
+              >
+                <p className="underline pb-1">Lets have a meet {">>"}</p>
+              </Link>
+            </div>
             <div className="contact__info mb-[20px] flex flex-col gap-x-[16px] text-first-color text-sm font-medium">
               <div className="info__item mb-[20px] flex !items-center gap-x-[16px]">
                 <FaEnvelopeOpen className="info_icon text-first-color text-[30px]" />
@@ -54,20 +65,27 @@ const Contact = ({}: Props) => {
             </div>
             <div className="social_info flex gap-[20px]">
               <Link
-                href={"www.linkedin.com/in/harshgupta840"}
+                href={"https://www.linkedin.com/in/harshgupta840"}
                 target="_blank"
+                replace
                 className="social_link  !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
               >
                 <FaLinkedin />
               </Link>
               <Link
-                href={"#"}
+                href={"https://www.github.com/harshgupta840"}
+                target="_blank"
+                replace
                 className="social_link !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
               >
                 <FaGithub />
               </Link>
               <Link
-                href={"#"}
+                href={
+                  "https://instagram.com/harshgupta080?igshid=ZGUzMzM3NWJiOQ=="
+                }
+                target="_blank"
+                replace
                 className="social_link !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
               >
                 <FaInstagram />
@@ -75,7 +93,13 @@ const Contact = ({}: Props) => {
             </div>
           </div>
 
-          <form action="" className="contact_form">
+          <form
+            action=""
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+            className="contact_form"
+          >
             <div className="form_input_group grid grid-rows-1 sm:grid-cols-3 place-items-center gap-3">
               <div className="form_input_div w-[100%] sm:w-auto">
                 <input
