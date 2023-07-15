@@ -1,17 +1,40 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Profile from "../../../public/assets/home.jpg";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Balancer from "react-wrap-balancer";
 import Text from "../component/textAnimation";
 import { PiCoffeeFill } from "react-icons/pi";
+import { gsap, Power3 } from "gsap";
+import { CSSPlugin } from "gsap/all";
 type Props = {};
 
-const Home = ({}: Props) => {
+const HeroSection = ({}: Props) => {
+  let text = useRef(null);
+  let div = useRef(null);
+  let p = useRef(null);
+  gsap.registerPlugin(CSSPlugin);
+  let tl = gsap.timeline();
+  useEffect(() => {
+    tl.from(text.current, {
+      opacity: 0,
+      duration: 0.8,
+      transition: Power3.easeInOut,
+    })
+      .from(text.current, { y: 3, duration: 0.5 }, "-=0.3")
+      .from(p.current, {
+        opacity: 0,
+        transition: Power3.easeInOut,
+        duration: 0.8,
+      })
+      .from(p.current, { y: 3, duration: 0.5 }, "-=0.3");
+  }, []);
   return (
     <>
-      <section className="hone relative section grid gap-[20px] grid-cols-[1fr] md:grid-cols-[4.32fr_7.68fr] items-center  h-[100vh] md:px-[15px] lg:p-[10px] xl:p-[40px] overflow-hidden ">
+      <div ref={div} className="w-[0%] h-full bg-first-color/70"></div>
+      <section className="hone section grid gap-[20px] grid-cols-[1fr] md:grid-cols-[4.32fr_7.68fr] items-center bg-border-color relative h-[100vh] md:px-[15px] lg:p-[10px] xl:p-[40px]">
         <Image
           quality={100}
           src={Profile}
@@ -21,12 +44,18 @@ const Home = ({}: Props) => {
         <div className="home__content flex flex-col text-center md:text-left">
           <div className="home__data lg:max-w-[550px] xl:max-w-[650px] 2xl:max-w-[720px] lg:mx-auto  p-[15px]">
             <h1 className="home__title md:before:content-[''] md:before:absolute md:before:left-0 md:before:top-[26%] md:before:w-[48px] md:before:h-[5px] rounded-lg before:bg-first-color relative sm:text[26px] md:text-[34px] lg:text-[37px] xl:text-[48px] md:pl-[65px]">
-              <span className="block text-first-color text-[25px] sm:text-[30px] md:text-[40px] lg:text-[46px] 2xl:text-h1">
+              <span
+                ref={text}
+                className="block text-first-color text-[25px] sm:text-[30px] md:text-[40px] lg:text-[46px] 2xl:text-h1"
+              >
                 I am Harsh Gupta.
               </span>
               <Text />
             </h1>
-            <p className="hero__description leading-loose mx-32px my-[16px] mb-[40px] text-title-color text-[13px] md:text-[15px] xl:text[19px] 2xl:text-[22px]">
+            <p
+              ref={p}
+              className="hero__description leading-loose mx-32px my-[16px] mb-[40px] text-title-color text-[13px] md:text-[15px] xl:text[19px] 2xl:text-[22px]"
+            >
               <Balancer>
                 Experienced MERN Stack and Next.js developer with 1 years of
                 experience. Skilled in building robust web applications,
@@ -60,4 +89,4 @@ const Home = ({}: Props) => {
   );
 };
 
-export default Home;
+export default HeroSection;

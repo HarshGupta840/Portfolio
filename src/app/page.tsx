@@ -1,3 +1,21 @@
-export default function Home() {
-  return <h1>hello portfolio</h1>;
-}
+import React from "react";
+import styles from "./styles.module.css";
+import HeroSection from "./home/page";
+import About from "./about/page";
+import Portfolio from "./portfolio/page";
+import Contact from "./contact/page";
+
+type Props = {};
+
+const Home = ({}: Props) => {
+  return (
+    <>
+      <HeroSection />
+      <About />
+      <Portfolio />
+      <Contact />
+    </>
+  );
+};
+
+export default Home;

@@ -15,17 +15,17 @@ type Props = {};
 const About = ({}: Props) => {
   return (
     <>
-      <h1 className="text-title-color text-h1 font-bold mt-[6rem] mb-[2rem] text-center">
+      <h1 className="text-title-color text-[20px] md:text-[45px] lg:text-h1 font-bold mt-[6rem] mb-[2rem] text-center">
         About <span className="text-first-color">Me</span>
       </h1>
       <section className="container mb-[4rem]">
-        <div className="grid grid-cols-[4fr_8fr] gap-1 p-2">
+        <div className="grid grid-rows-1 lg:grid-cols-[4fr_8fr] gap-1 p-2">
           <div></div>
           <div className="flex flex-col gap-2">
-            <h2 className="text-[30px] font-medium text-first-color mb-6 text-center">
+            <h2 className="md:text-[24px] text-[20px] lg:text-[30px] font-medium text-first-color mb-6 text-center">
               Welcome to my portfolio
             </h2>
-            <p className="text-title-color text-[18px] font-normal leading-7">
+            <p className="text-title-color text-[18px] font-normal leading-7 text-center md:text-left line-clamp-[20] md:line-clamp-none">
               <Balancer>
                 {`I'm Harsh Gupta, a dedicated and enthusiastic MERN Stack developer with a strong passion for web development and creating innovative solutions. With over one year of professional experience, I have honed my skills in building robust and scalable applications using MongoDB, Express.js, React.js,Next.js and Node.js. Additionally, I have expertise in Next.js, a powerful framework for server-rendered React applications.`}
                 <br />
@@ -89,12 +89,12 @@ const About = ({}: Props) => {
           Skills
         </h2>
         <div className="flex justify-between items-center flex-col md:flex-row container mx-auto mt-[4rem] gap-[3rem] md:gap-0">
-          <div className="flex justify-center items-center h-[135px] w-[135px] md:h-[160px] md:w-[160px] rounded shadow-[0_0_10px_13px_#66DBFB]">
+          <div className="flex justify-center items-center h-[135px] w-[135px] md:h-[160px] md:w-[160px] animate-bounce  rounded shadow-[0_0_10px_13px_#66DBFB]">
             <span className="text-[#66DBFB] h-[120px] w-[120px] flex justify-center items-center">
               <BiLogoReact className="h-[120px] w-[120px]" />
             </span>
           </div>
-          <div className="flex justify-center items-center h-[135px] w-[135px] md:h-[160px] md:w-[160px] rounded shadow-[0_0_10px_13px_#000]">
+          <div className="flex justify-center items-center h-[135px] w-[135px] md:h-[160px] md:w-[160px] animate-bounce rounded shadow-[0_0_10px_13px_#000]">
             <Image
               alt="icons"
               height={120}
@@ -103,7 +103,7 @@ const About = ({}: Props) => {
               className="object-contain object-top mix-blend-color-burn"
             />
           </div>
-          <div className="flex justify-center items-center h-[135px] w-[135px] md:h-[160px] md:w-[160px] rounded shadow-[0_0_10px_13px_#000]">
+          <div className="flex justify-center items-center h-[135px] w-[135px] md:h-[160px] md:w-[160px] animate-bounce rounded shadow-[0_0_10px_13px_#000]">
             <Image
               alt="icons"
               height={120}
@@ -112,7 +112,7 @@ const About = ({}: Props) => {
               className="object-contain object-top"
             />
           </div>
-          <div className="flex justify-center items-center h-[135px] w-[135px] md:h-[160px] md:w-[160px] shadow-[0_0_10px_13px_rgb(85,159,68)]">
+          <div className="flex justify-center items-center h-[135px] w-[135px] md:h-[160px] animate-bounce md:w-[160px] shadow-[0_0_10px_13px_rgb(85,159,68)]">
             <Image alt="icons" height={120} width={120} src={node} />
           </div>
         </div>
