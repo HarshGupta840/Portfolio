@@ -16,7 +16,7 @@ type Props = {};
 const Contact = ({}: Props) => {
   return (
     <>
-      <section className="contact section container mx-auto md:mt-[6rem] lg:mt-[10rem] mb-[6rem] px-6 sm:px-0">
+      <section className="contact section 2xl:max-w-[1250px] container mx-auto md:mt-[6rem] lg:mt-[8rem] mb-[6rem] px-6 sm:px-0">
         <h2 className="section__title  text-center text-h2 mb-8">
           Get In <span className="text-first-color">Touch</span>
         </h2>
@@ -27,23 +27,13 @@ const Contact = ({}: Props) => {
               {" "}
               Dont be shy !
             </h3>
-            <p className="contact__description text-title-color text-[16px] leading-[1.6] mb-[2px]">
+            <p className="contact__description text-title-color text-[16px] leading-[1.6] mb-[10px]">
               <Balancer />
               Feel free to get in touch with me.I am always open to discussing
               new projects, creative ideas or oppportunities to be part of your
               visions.
             </p>
-            <div>
-              <Link
-                className="font-medium text-[18px] p-[8px] m-[8px] text-title-color hover:text-first-color"
-                href={"https://calendly.com/harshgupta840g/introductory-call"}
-                target="_blank"
-                replace
-              >
-                <p className="underline pb-1">Lets have a meet {">>"}</p>
-              </Link>
-            </div>
-            <div className="contact__info mb-[20px] flex flex-col gap-x-[16px] text-first-color text-sm font-medium">
+            <div className="contact__info flex flex-col gap-x-[16px] text-first-color text-sm font-medium">
               <div className="info__item mb-[20px] flex !items-center gap-x-[16px]">
                 <FaEnvelopeOpen className="info_icon text-first-color text-[30px]" />
                 <div>
@@ -63,7 +53,19 @@ const Contact = ({}: Props) => {
                 </div>
               </div>
             </div>
-            <div className="social_info flex gap-[20px]">
+            <div>
+              <Link
+                className="font-medium text-[18px]"
+                href={"https://calendly.com/harshgupta840g/introductory-call"}
+                target="_blank"
+                replace
+              >
+                <p className="border-[1px] text-title-color rounded-xl  hover:bg-transparent placeholder:transition-all duration-200 ease-linear border-solid border-first-color bg-first-color px-4 py-3 w-auto inline-block">
+                  Lets have a meet {">>"}
+                </p>
+              </Link>
+            </div>
+            <div className="social_info flex gap-[20px] mt-4">
               <Link
                 href={"https://www.linkedin.com/in/harshgupta840"}
                 target="_blank"

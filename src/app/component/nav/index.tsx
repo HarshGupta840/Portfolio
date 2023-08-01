@@ -12,9 +12,9 @@ const Navbar = ({}: Props) => {
   const pathname = usePathname();
   return (
     <>
-      <nav className="nav z-[1] w-[100vw] lg:w-auto bottom-[20px] fixed inset-block lg:right-[5px] xl:right-[10px] flex justify-center  lg:flex-col lg:items-center">
+      <nav className="bg-transparent backdrop-blur-md nav z-[1] w-[100vw] lg:w-auto bottom-[0px] fixed inset-block lg:right-[5px] xl:right-[10px] flex justify-center  lg:flex-col lg:items-center">
         <div>
-          <div className="nav_list flex lg:flex-col">
+          <div className="nav_list p-2  flex lg:flex-col">
             {links.map((elem: any, index: number) => {
               return (
                 <div

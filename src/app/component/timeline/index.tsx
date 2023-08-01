@@ -1,17 +1,86 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
+import { gsap, Power3, Power4 } from "gsap";
+import { CSSPlugin, ScrollTrigger } from "gsap/all";
+import Link from "next/link";
+import oll from "../../../../public/assets/oll logo.jpeg";
+import Image from "next/image";
+
 type Props = {};
 
 const Timeline = ({}: Props) => {
+  gsap.registerPlugin(CSSPlugin, ScrollTrigger);
+  let t1 = gsap.timeline();
+  useEffect(() => {
+    t1.from(".leftBox1", {
+      scrollTrigger: {
+        scrub: 1,
+        start: "clamp(top 80%)",
+        end: "clamp(top 60%)",
+        trigger: ".leftBox1",
+      },
+      opacity: 0,
+      zIndex: 0,
+      ease: "none",
+      duration: 3,
+    })
+      .from(".rightBox1", {
+        scrollTrigger: {
+          scrub: 1,
+          start: "clamp(top 80%)",
+          end: "clamp(top 60%)",
+          trigger: ".rightBox1",
+        },
+        opacity: 0,
+        zIndex: 0,
+        ease: "none",
+        duration: 3,
+      })
+      .from(".leftBox2", {
+        scrollTrigger: {
+          scrub: 1,
+          start: "clamp(top 80%)",
+          end: "clamp(top 60%)",
+          trigger: ".leftBox2",
+        },
+        opacity: 0,
+        zIndex: 0,
+        ease: "none",
+        duration: 3,
+      })
+      .from(".rightBox2", {
+        scrollTrigger: {
+          scrub: 1,
+          start: "clamp(top 80%)",
+          end: "clamp(top 60%)",
+          trigger: ".rightBox2",
+        },
+        opacity: 0,
+        zIndex: 0,
+        ease: "none",
+        duration: 3,
+      })
+      .from(".height", {
+        scrollTrigger: {
+          scrub: 1,
+          start: "clamp(top 80%)",
+          end: "clamp(bottom top)",
+          trigger: ".height",
+        },
+        height: "0px",
+        ease: "none",
+        duration: 3,
+      });
+  });
   return (
     <section className="py-16 lg:py-20">
       <div className="max-w-xl mx-auto"></div>
       <div className="flex flex-col justify-center ">
         <div className="w-full px-4 mx-auto lg:max-w-5xl ">
           <div className="relative">
-            <div className="absolute hidden w-1 h-full transform -translate-x-1/2 bg-[#c9e2f5] dark:bg-gray-700 lg:block left-1/2"></div>
+            <div className="height absolute hidden w-1 h-full transform -translate-x-1/2 bg-[#c9e2f5] dark:bg-gray-700 lg:block left-1/2"></div>
             <div className="space-y-2 lg:space-y-4">
-              <div>
+              <div className="leftBox1">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-start w-full mx-auto">
                     <div className="w-full lg:w-1/2 lg:pr-8">
@@ -19,29 +88,34 @@ const Timeline = ({}: Props) => {
                         <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-3 -right-4">
                           <div className="hidden h-10 origin-bottom-left transform -rotate-45 bg-white shadow lg:block dark:bg-gray-900"></div>
                         </div>
-                        <div className="relative z-20 ">
-                          <div className="flex flex-wrap items-center">
-                            <div className="p-4 md:w-1/4 ">
-                              <span className="text-lg text-gray-700 dark:text-gray-400">
-                                January
-                              </span>
-                              <p className="text-2xl font-bold text-gray-700 dark:text-gray-400 text-bold">
-                                01
-                              </p>
-                              <span className="text-lg text-gray-700 dark:text-gray-400">
-                                2015
-                              </span>
-                            </div>
-                            <div className="flex-1 p-4 pr-4 border-l border-gray-300 dark:border-gray-700">
-                              <p className="mb-2 text-xl font-bold text-gray-600 dark:text-gray-400">
-                                Company Started
-                              </p>
-                              <p className="text-gray-700 dark:text-gray-500">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. veniam libero facilis minus
-                                reprehenderit.
-                              </p>
-                            </div>
+                        <div className=" relative z-20 ">
+                          {/* content */}
+                          <div className=" flex flex-col flex-wrap px-8">
+                            <h2 className="mt-2">
+                              MERN Stack Developer at{" "}
+                              <span className="text-first-color">OLL</span>
+                            </h2>
+                            <h3 className="text-first-color">
+                              Dec 2022 to April 2023
+                            </h3>
+                            <p className="text-title-color my-3">
+                              During this internship, I had the opportunity to
+                              work as a MERN Stack and in-house developer,
+                              contributing to the development and enhancement of
+                              various projects. As a MERN Stack developer, I
+                              utilized my skills in MongoDB, Express.js, React,
+                              and Node.js to create robust and efficient web
+                              applications.
+                            </p>
+                            <Link
+                              href={
+                                "https://drive.google.com/file/d/1apvl1r6vhgKTqdqLkZMY5rGaJ2cbNXXv/view?usp=drivesdk"
+                              }
+                              target="_blank"
+                              className="text-first-color cursor-pointer border-dotted mb-2 underline"
+                            >
+                              View Certiticate
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -49,26 +123,19 @@ const Timeline = ({}: Props) => {
                   </div>
                   <div className="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 -translate-y-4 bg-blue-500 rounded-full dark:bg-gray-700 left-1/2 lg:translate-y-[4px]">
                     <span className="text-gray-100 dark:text-gray-400">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="w-3 h-3 bi bi-building"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"
-                        ></path>
-                        <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"></path>
-                      </svg>
+                      <Image
+                        src={oll}
+                        alt="logo"
+                        height={20}
+                        width={20}
+                        className="mix-blend-color-burn"
+                      />
                     </span>
                   </div>
                 </div>
               </div>
               {/* <!-- Right section --> */}
-              <div>
+              <div className="rightBox1">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-end w-full mx-auto">
                     <div className="w-full lg:w-1/2 lg:pl-8">
@@ -77,28 +144,30 @@ const Timeline = ({}: Props) => {
                           <div className="hidden h-10 origin-top-right transform -rotate-45 bg-white dark:bg-gray-900 lg:block drop-shadow-lg"></div>
                         </div>
                         <div className="relative z-20 ">
-                          <div className="flex flex-wrap items-center">
-                            <div className="p-4 md:w-1/4 ">
-                              <span className="text-lg text-gray-700 dark:text-gray-400">
-                                February
-                              </span>
-                              <p className="text-2xl font-bold text-gray-700 dark:text-gray-400 text-bold">
-                                02
-                              </p>
-                              <span className="text-lg text-gray-700 dark:text-gray-400">
-                                2020
-                              </span>
-                            </div>
-                            <div className="flex-1 p-4 pr-4 border-l border-gray-300 dark:border-gray-700">
-                              <p className="mb-2 text-xl font-bold text-gray-600 dark:text-gray-400">
-                                Website Launched
-                              </p>
-                              <p className="text-gray-700 dark:text-gray-500">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. veniam libero facilis minus
-                                reprehenderit.
-                              </p>
-                            </div>
+                          <div className=" flex flex-col flex-wrap px-8">
+                            <h2 className="mt-2">
+                              Full Stack Developer at{" "}
+                              <span className="text-first-color">TEXAM</span>
+                            </h2>
+                            <h3 className="text-first-color">
+                              Sep 2022 to Jan 2023
+                            </h3>
+                            <p className="text-title-color my-3">
+                              During this internship, I had the privilege of
+                              working as a MERN Stack developer, where I gained
+                              hands-on experience in building modern web
+                              applications using MongoDB, Express.js, React, and
+                              Node.js.
+                            </p>
+                            <Link
+                              href={
+                                "https://drive.google.com/file/d/1akr_FgYk51en2Dhl85UyTmRebXV5L6UR/view?usp=drivesdk"
+                              }
+                              target="_blank"
+                              className="text-first-color cursor-pointer border-dotted mb-2 underline"
+                            >
+                              View Certiticate
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -121,7 +190,7 @@ const Timeline = ({}: Props) => {
                 </div>
               </div>
               {/* <!-- Left section --> */}
-              <div>
+              {/* <div className="leftBox2">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-start w-full mx-auto">
                     <div className="w-full lg:w-1/2 lg:pr-8">
@@ -172,9 +241,9 @@ const Timeline = ({}: Props) => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* <!-- Right section --> */}
-              <div>
+              {/* <div className="rightBox2">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-end w-full mx-auto">
                     <div className="w-full lg:w-1/2 lg:pl-8">
@@ -226,7 +295,7 @@ const Timeline = ({}: Props) => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -236,3 +305,120 @@ const Timeline = ({}: Props) => {
 };
 
 export default Timeline;
+
+// "use client";
+// import React from "react";
+// import {
+//   VerticalTimeline,
+//   VerticalTimelineElement,
+// } from "react-vertical-timeline-component";
+// import "react-vertical-timeline-component/style.min.css";
+// type Props = {};
+
+// const Timeline = ({}: Props) => {
+//   return (
+//     <>
+//       ...
+//       <VerticalTimeline>
+//         <VerticalTimelineElement
+//           className="vertical-timeline-element--work"
+//           contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+//           contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+//           date="2011 - present"
+//           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+//           // icon={<WorkIcon />}
+//         >
+//           <h3 className="vertical-timeline-element-title">Creative Director</h3>
+//           <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+//           <p>
+//             Creative Direction, User Experience, Visual Design, Project
+//             Management, Team Leading
+//           </p>
+//         </VerticalTimelineElement>
+//         <VerticalTimelineElement
+//           className="vertical-timeline-element--work"
+//           date="2010 - 2011"
+//           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+//           // icon={<WorkIcon />}
+//         >
+//           <h3 className="vertical-timeline-element-title">Art Director</h3>
+//           <h4 className="vertical-timeline-element-subtitle">
+//             San Francisco, CA
+//           </h4>
+//           <p>
+//             Creative Direction, User Experience, Visual Design, SEO, Online
+//             Marketing
+//           </p>
+//         </VerticalTimelineElement>
+//         <VerticalTimelineElement
+//           className="vertical-timeline-element--work"
+//           date="2008 - 2010"
+//           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+//           // icon={<WorkIcon />}
+//         >
+//           <h3 className="vertical-timeline-element-title">Web Designer</h3>
+//           <h4 className="vertical-timeline-element-subtitle">
+//             Los Angeles, CA
+//           </h4>
+//           <p>User Experience, Visual Design</p>
+//         </VerticalTimelineElement>
+//         <VerticalTimelineElement
+//           className="vertical-timeline-element--work"
+//           date="2006 - 2008"
+//           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+//           // icon={<WorkIcon />}
+//         >
+//           <h3 className="vertical-timeline-element-title">Web Designer</h3>
+//           <h4 className="vertical-timeline-element-subtitle">
+//             San Francisco, CA
+//           </h4>
+//           <p>User Experience, Visual Design</p>
+//         </VerticalTimelineElement>
+//         <VerticalTimelineElement
+//           className="vertical-timeline-element--education"
+//           date="April 2013"
+//           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+//           // icon={<SchoolIcon />}
+//         >
+//           <h3 className="vertical-timeline-element-title">
+//             Content Marketing for Web, Mobile and Social Media
+//           </h3>
+//           <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
+//           <p>Strategy, Social Media</p>
+//         </VerticalTimelineElement>
+//         <VerticalTimelineElement
+//           className="vertical-timeline-element--education"
+//           date="November 2012"
+//           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+//           // icon={<SchoolIcon />}
+//         >
+//           <h3 className="vertical-timeline-element-title">
+//             Agile Development Scrum Master
+//           </h3>
+//           <h4 className="vertical-timeline-element-subtitle">Certification</h4>
+//           <p>Creative Direction, User Experience, Visual Design</p>
+//         </VerticalTimelineElement>
+//         <VerticalTimelineElement
+//           className="vertical-timeline-element--education"
+//           date="2002 - 2006"
+//           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+//           // icon={<SchoolIcon />}
+//         >
+//           <h3 className="vertical-timeline-element-title">
+//             Bachelor of Science in Interactive Digital Media Visual Imaging
+//           </h3>
+//           <h4 className="vertical-timeline-element-subtitle">
+//             Bachelor Degree
+//           </h4>
+//           <p>Creative Direction, Visual Design</p>
+//         </VerticalTimelineElement>
+//         <VerticalTimelineElement
+//           iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
+//           // icon={<StarIcon />}
+//         />
+//       </VerticalTimeline>
+//     </>
+//   );
+// };
+
+// export default Timeline;

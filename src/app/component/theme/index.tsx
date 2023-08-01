@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { themes } from "@/utils/data";
-import { FaCog } from "react-icons/fa";
+import { MdColorLens } from "react-icons/md";
 import Image from "next/image";
 
 type Props = {};
@@ -26,10 +26,10 @@ const Theme = ({}: Props) => {
               toggler ? `left-[-100%]` : `left-[100%]`
             } top-0`}
           >
-            <FaCog />
+            <MdColorLens />
           </div>
-          <h3 className="style__switcher--title text-sm font-semibold border-b-[1px] border-b-solid border-b-[hsl(0_0_87%] mb-[15px] pb-[5px]">
-            Change Theme
+          <h3 className="style__switcher--title text-first-color text-sm font-semibold border-b-[1px] border-b-solid border-b-[hsl(0_0_87%] mb-[15px] pb-[5px]">
+            Switch Theme
           </h3>
           <div className="style_switcher__item grid grid-cols-5 gap-x-1 gap-y-2">
             {themes.map((item: any, index: number) => {

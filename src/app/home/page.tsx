@@ -7,35 +7,52 @@ import { FaArrowRight } from "react-icons/fa";
 import Balancer from "react-wrap-balancer";
 import Text from "../component/textAnimation";
 import { PiCoffeeFill } from "react-icons/pi";
-import { gsap, Power3 } from "gsap";
-import { CSSPlugin } from "gsap/all";
+import { gsap, Power3, Power4 } from "gsap";
+import { CSSPlugin, ScrollTrigger } from "gsap/all";
 type Props = {};
 
 const HeroSection = ({}: Props) => {
   let text = useRef(null);
   let div = useRef(null);
+  let img = useRef(null);
   let p = useRef(null);
+  let aboutButton = useRef(null);
+  let coffeeButton = useRef(null);
   gsap.registerPlugin(CSSPlugin);
   let tl = gsap.timeline();
   useEffect(() => {
-    tl.from(text.current, {
-      opacity: 0,
+    tl.from(img.current, {
+      scale: 4,
       duration: 0.8,
-      transition: Power3.easeInOut,
+      transition: Power4.easeIn,
     })
-      .from(text.current, { y: 3, duration: 0.5 }, "-=0.3")
+      .from(text.current, {
+        opacity: 0,
+        duration: 0.8,
+        transition: Power3.easeInOut,
+      })
       .from(p.current, {
         opacity: 0,
-        transition: Power3.easeInOut,
         duration: 0.8,
+        transition: Power3.easeInOut,
       })
-      .from(p.current, { y: 3, duration: 0.5 }, "-=0.3");
+      .from(aboutButton.current, {
+        duration: 0.8,
+        opacity: 0,
+        transition: Power3.easeInOut,
+      })
+      .from(coffeeButton.current, {
+        duration: 0.8,
+        opacity: 0,
+        transition: Power3.easeInOut,
+      });
   }, []);
   return (
     <>
       <div ref={div} className="w-[0%] h-full bg-first-color/70"></div>
       <section className="hone section grid gap-[20px] grid-cols-[1fr] md:grid-cols-[4.32fr_7.68fr] items-center bg-border-color relative h-[100vh] md:px-[15px] lg:p-[10px] xl:p-[40px]">
         <Image
+          ref={img}
           quality={100}
           src={Profile}
           alt="home_images"
@@ -54,7 +71,7 @@ const HeroSection = ({}: Props) => {
             </h1>
             <p
               ref={p}
-              className="hero__description leading-loose mx-32px my-[16px] mb-[40px] text-title-color text-[13px] md:text-[15px] xl:text[19px] 2xl:text-[22px]"
+              className="hero__description leading-loose mx-32px my-[16px]  mb-[40px] text-title-color text-[13px] md:text-[15px] xl:text[19px] 2xl:text-[22px]"
             >
               <Balancer>
                 Experienced MERN Stack and Next.js developer with 1 years of
@@ -65,8 +82,9 @@ const HeroSection = ({}: Props) => {
                 expectations.
               </Balancer>
             </p>
-            <div className="flex justify-between sm:justify-evenly md:justify-between flex-row ">
+            <div className="flex justify-between sm:justify-evenly md:justify-between flex-row items-center">
               <Link
+                ref={aboutButton}
                 href={"/about"}
                 className="inline-block text-title-color border-[1px] border-solid border-first-color p-[12px_62px_12px_23px] sm:p-[11px_66px_12px_30px] md:p-[12px_66px_14px_32px] lg:p-[14px_67px_14px_33px] xl:p-[15px_70px_15px_35px] rounded-[35px] font-medium relative mb-10px  sm:text-[14px] md:text-[15px] xl:text-[16px] text-[11px]"
               >
@@ -75,11 +93,12 @@ const HeroSection = ({}: Props) => {
                   <FaArrowRight className="" />
                 </span>
               </Link>
-
-              <button className="text-title-color border-[1px] border-solid border-first-color w-[155px] sm:w-[190px] sm:text-[14px] md:w-[200px] lg:w-[220px]  rounded-[35px] font-medium relative mb-10px bg-first-color hover:bg-transparent transition-all duration-[0.3s] ease-linear items-center text-center flex justify-center gap-2 md:text-[15px] xl:text-[16px] text-[12px]">
-                <span>Buy Me a Coffee </span>
-                <PiCoffeeFill className="" />
-              </button>
+              <Link href={"#"} ref={coffeeButton}>
+                <button className="text-title-color border-[1px] border-solid border-first-color w-[155px] sm:w-[190px] sm:text-[14px] md:w-[200px] lg:w-[220px] py-3  rounded-[35px] font-medium relative mb-10px bg-first-color hover:bg-transparent transition-all duration-[0.3s] ease-linear items-center text-center flex justify-center gap-2 md:text-[15px] xl:text-[16px] text-[12px] opacity-[1]">
+                  <span>Buy Me a Coffee </span>
+                  <PiCoffeeFill />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -64,6 +64,12 @@ textarea {
   font-size: 24px;
   margin-inline: auto;
 }
+.stroke {
+  -webkit-text-fill-color: var(--border-color);
+  color: var(--title-color);
+  font-size: 100px;
+  -webkit-text-stroke-width: 1px;
+}
 @media (min-width: 640px) {
 }
 
