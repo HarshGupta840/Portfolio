@@ -28,7 +28,10 @@ const Glitch = ({}: Props) => {
   return (
     <>
       <div className="flex justify-center items-center h-screen w-full bg-border-color overflow-hidden">
-        <h1 ref={logo_1} className="stroke animate-pulse">
+        <h1
+          ref={logo_1}
+          className="stroke animate-pulse text-[35px] md:text-[70px] xl:text-[100px]"
+        >
           DEVELOPER HARSH
         </h1>
       </div>

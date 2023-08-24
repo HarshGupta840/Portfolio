@@ -67,12 +67,8 @@ textarea {
 .stroke {
   -webkit-text-fill-color: var(--border-color);
   color: var(--title-color);
-  font-size: 100px;
   -webkit-text-stroke-width: 1px;
 }
-@media (min-width: 640px) {
-}
-
 @media (min-width: 1024px) {
   .inset-block {
     inset-block: 0;

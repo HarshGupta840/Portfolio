@@ -11,11 +11,11 @@ type Props = {};
 const Home = ({}: Props) => {
   return (
     <>
-      {/* <HeroSection />
-      <About />
-      <Portfolio />
-      <Contact /> */}
-      <Glitch />
+      <HeroSection />
+      {/* <About /> */}
+      {/* <Portfolio /> */}
+      {/* <Contact /> */}
+      {/* <Glitch /> */}
     </>
   );
 };

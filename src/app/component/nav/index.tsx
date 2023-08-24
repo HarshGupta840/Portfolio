@@ -12,14 +12,14 @@ const Navbar = ({}: Props) => {
   const pathname = usePathname();
   return (
     <>
-      <nav className="bg-transparent backdrop-blur-md nav z-[1] w-[100vw] lg:w-auto bottom-[0px] fixed inset-block lg:right-[5px] xl:right-[10px] flex justify-center  lg:flex-col lg:items-center">
+      <nav className="bg-transparent backdrop-blur-md nav z-[1000] w-[100vw] lg:w-auto bottom-[0px] fixed inset-block lg:right-[5px] xl:right-[10px] flex justify-center  lg:flex-col lg:items-center">
         <div>
           <div className="nav_list p-2  flex lg:flex-col">
             {links.map((elem: any, index: number) => {
               return (
                 <div
                   key={index}
-                  className="nav_item mx-[20px] lg:mx-2 lg:px-0 lg:my-[20px] "
+                  className="nav_item mx-[20px] lg:mx-1 lg:px-0 lg:my-[20px] "
                 >
                   <Link
                     onClick={() => setShowToggle(!showToggle)}

@@ -1,12 +1,17 @@
 "use client";
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
-import Profile from "../../../public/assets/home.jpg";
+import Profile from "../../../public/assets/harsh.jpg";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Balancer from "react-wrap-balancer";
 import Text from "../component/textAnimation";
 import { PiCoffeeFill } from "react-icons/pi";
+import { BiLogoReact } from "react-icons/bi";
+import { BiLogoHtml5 } from "react-icons/bi";
+import { BiLogoCss3 } from "react-icons/bi";
+import { BiLogoJavascript } from "react-icons/bi";
+import { BiLogoRedux } from "react-icons/bi";
 import { gsap, Power3, Power4 } from "gsap";
 import { CSSPlugin, ScrollTrigger } from "gsap/all";
 type Props = {};
@@ -49,6 +54,18 @@ const HeroSection = ({}: Props) => {
   }, []);
   return (
     <>
+      {/* <section>
+        <div className="absolute right-[50rem] top-[8rem] z-[1000]">
+          <span className="text-[#66DBFB] h-[120px] w-[120px] flex  justify-center items-center">
+            <BiLogoReact className="md:h-[90px] md:w-[90px] h-[50px] w-[50px] opacity-30" />
+          </span>
+        </div>
+        <div className="absolute top-[49rem] right-[9rem] z-[1000]">
+          <span className="text-[#7A4DBD] h-[120px] w-[120px] flex  justify-center items-center">
+            <BiLogoRedux className="md:h-[90px] md:w-[90px] h-[50px] w-[50px] opacity-30" />
+          </span>
+        </div>
+      </section> */}
       <div ref={div} className="w-[0%] h-full bg-first-color/70"></div>
       <section className="hone section grid gap-[20px] grid-cols-[1fr] md:grid-cols-[4.32fr_7.68fr] items-center bg-border-color relative h-[100vh] md:px-[15px] lg:p-[10px] xl:p-[40px]">
         <Image

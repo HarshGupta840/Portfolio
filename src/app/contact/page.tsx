@@ -96,7 +96,6 @@ const Contact = ({}: Props) => {
           </div>
 
           <form
-            action=""
             onSubmit={(e) => {
               e.preventDefault();
             }}
@@ -105,6 +104,8 @@ const Contact = ({}: Props) => {
             <div className="form_input_group grid grid-rows-1 sm:grid-cols-3 place-items-center gap-3">
               <div className="form_input_div w-[100%] sm:w-auto">
                 <input
+                  name="name"
+                  required
                   type="text"
                   placeholder="Your name"
                   className="form__control border-solid border-container-color border-[1px]  bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl w-[100%] transition-all duration-[0.3s] ease-linear focus:border-first-color"
@@ -112,14 +113,18 @@ const Contact = ({}: Props) => {
               </div>
               <div className="form_input_div w-[100%] sm:w-auto">
                 <input
-                  type="text"
+                  type="email"
+                  required
+                  name="email"
                   placeholder="Your email"
                   className="form__control w-[100%] border-solid border-container-color border-[1px]  bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl transition-all duration-[0.3s] ease-linear focus:border-first-color"
                 />
               </div>
               <div className="form_input_div w-[100%] sm:w-auto">
                 <input
-                  type="text"
+                  type="number"
+                  required
+                  name="contact"
                   placeholder="Your Contact "
                   className="form__control w-[100%] border-solid border-container-color border-[1px] bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl transition-all duration-[0.3s] ease-linear focus:border-first-color"
                 />
@@ -132,7 +137,11 @@ const Contact = ({}: Props) => {
               ></textarea>
             </div>
             <div className="flex justify-center sm:justify-start">
-              <button className="button inline-block text-title-color border-[1px] border-solid border-first-color p-[15px_70px_15px_35px] rounded-[35px] font-medium relative mb-10px">
+              <button
+                type="submit"
+                value="send"
+                className="button inline-block text-title-color border-[1px] border-solid border-first-color p-[15px_70px_15px_35px] rounded-[35px] font-medium relative mb-10px"
+              >
                 Send Message{" "}
                 <span className="button_icon bg-first-color !text-white absolute right-0 w-[55px] rounded-[50%] top-[0px] bottom-[0px] text-center text-lg flex justify-center items-center">
                   <FiSend />
