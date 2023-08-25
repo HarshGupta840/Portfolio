@@ -8,6 +8,7 @@ const Glitch = ({}: Props) => {
   let logo_1 = useRef(null);
   const timeline = gsap.timeline();
   useEffect(() => {
+    console.log("glitch called");
     timeline
       .to(logo_1.current, {
         duration: 1,
@@ -27,7 +28,7 @@ const Glitch = ({}: Props) => {
   });
   return (
     <>
-      <div className="flex justify-center items-center h-screen w-full bg-border-color overflow-hidden">
+      <div className="flex justify-center items-center h-screen w-full bg-border-color overflow-hidden z-[10000]">
         <h1
           ref={logo_1}
           className="stroke animate-pulse text-[35px] md:text-[70px] xl:text-[100px]"

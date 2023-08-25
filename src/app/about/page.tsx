@@ -138,7 +138,9 @@ const About = ({}: Props) => {
               <span className="hidden md:block">
                 {`During my journey as a developer, I have had the opportunity to work on various projects as a freelancer. These experiences have not only allowed me to apply my technical skills but have also provided me with valuable insights into client requirements and project management. The positive reviews and feedback I have received from clients have motivated me to continually enhance my abilities and deliver exceptional results.`}
               </span>
-              {` Alongside my web development expertise, I am currently pursuing a Bachelor's degree in Computer Science, specializing in software development. I am in my third year of studies, which has equipped me with a strong foundation in computer science principles and problem-solving techniques. I am also proficient in programming languages such as C and C++, further expanding my versatility as a developer.`}
+              <span className="hidden md:block">
+                {` Alongside my web development expertise, I am currently pursuing a Bachelor's degree in Computer Science, specializing in software development. I am in my third year of studies, which has equipped me with a strong foundation in computer science principles and problem-solving techniques. I am also proficient in programming languages such as C and C++, further expanding my versatility as a developer.`}
+              </span>
               <br />
               {` What drives me is the thrill of tackling new and challenging projects. I love pushing the boundaries of what can be achieved with technology and exploring emerging trends in the industry. Keeping up with the latest advancements and constantly expanding my knowledge are priorities for me, as I believe in staying at the forefront of the ever-evolving tech.`}
               <br />
@@ -371,7 +373,7 @@ const About = ({}: Props) => {
               );
             })}
           </Swiper>
-          <button className="award-swiper-prev absolute bottom-4 left-4 z-[1] md:z-[0] w-4 md:top-1/2 md:-translate-y-1/2 md:-left-6 md:rounded-full md:w-16 md:h-16 md:pl-4 md:bg-purple-off-white disabled:cursor-not-allowed">
+          <button className="award-swiper-prev absolute left-4 z-[1] md:z-[0] w-4 top-1/2 md:-translate-y-1/2 md:-left-6 md:rounded-full md:w-16 md:h-16 md:pl-4 md:bg-purple-off-white disabled:cursor-not-allowed">
             <svg
               width="16"
               height="29"
@@ -388,7 +390,7 @@ const About = ({}: Props) => {
               />
             </svg>
           </button>
-          <button className="award-swiper-next absolute bottom-4 right-4 z-[1] md:z-[0] w-4 md:top-1/2 md:-translate-y-1/2 md:-right-6 md:rounded-full md:w-16 md:h-16 md:pl-8 md:bg-purple-off-white disabled:cursor-not-allowed">
+          <button className="award-swiper-next absolute  right-4 z-[1] md:z-[0] w-4 top-1/2 md:-translate-y-1/2 md:-right-6 md:rounded-full md:w-16 md:h-16 md:pl-8 md:bg-purple-off-white disabled:cursor-not-allowed">
             <svg
               width="16"
               height="29"
