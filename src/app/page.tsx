@@ -14,7 +14,7 @@ const Home = ({}: Props) => {
       <HeroSection />
       {/* <About /> */}
       {/* <Portfolio /> */}
-      {/* <Contact /> */}
+      <Contact />
       {/* <Glitch /> */}
     </>
   );

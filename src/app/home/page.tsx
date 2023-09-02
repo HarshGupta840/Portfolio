@@ -2,6 +2,9 @@
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import Profile from "../../../public/assets/harsh.jpg";
+import svgs from "../../../public/assets/svgs/freekancersvg.svg";
+import reactsvgs from "../../../public/assets/svgs/reactsvg.svg";
+import nextsvgs from "../../../public/assets/svgs/nextsvg.svg";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Balancer from "react-wrap-balancer";
@@ -12,8 +15,10 @@ import { BiLogoHtml5 } from "react-icons/bi";
 import { BiLogoCss3 } from "react-icons/bi";
 import { BiLogoJavascript } from "react-icons/bi";
 import { BiLogoRedux } from "react-icons/bi";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { gsap, Power3, Power4 } from "gsap";
 import { CSSPlugin, ScrollTrigger } from "gsap/all";
+
 type Props = {};
 
 const HeroSection = ({}: Props) => {
@@ -23,7 +28,7 @@ const HeroSection = ({}: Props) => {
   let p = useRef(null);
   let aboutButton = useRef(null);
   let coffeeButton = useRef(null);
-  gsap.registerPlugin(CSSPlugin);
+  gsap.registerPlugin(CSSPlugin, ScrollTrigger);
   let tl = gsap.timeline();
   useEffect(() => {
     tl.from(img.current, {
@@ -55,7 +60,38 @@ const HeroSection = ({}: Props) => {
   return (
     <>
       <section className="w-[100vw] bg-border-color relative">
-        <div></div>
+        {/* svgs */}
+        <div className="absolute md:flex justify-center items-center w-[4vw] h-[100vh] hidden">
+          <div className="social_info flex flex-col text-center items-center gap-[10px] ">
+            <Link
+              href={"https://www.linkedin.com/in/harshgupta840"}
+              target="_blank"
+              replace
+              className="social_link  !text-[26px] flex justify-center !text-first-color  h-[45px] w-[45px] !text-white  rounded-[50%] !text-center items-center"
+            >
+              <FaLinkedin />
+            </Link>
+            <Link
+              href={"https://www.github.com/harshgupta840"}
+              target="_blank"
+              replace
+              className="social_link !text-[26px] flex justify-center !text-first-color  h-[45px] w-[45px]  !text-white  rounded-[50%] !text-center items-center"
+            >
+              <FaGithub />
+            </Link>
+            <Link
+              href={
+                "https://instagram.com/harshgupta080?igshid=ZGUzMzM3NWJiOQ=="
+              }
+              target="_blank"
+              replace
+              className="social_link !text-[26px] flex justify-center !text-first-color  h-[45px] w-[45px] !text-white  rounded-[50%] !text-center items-center"
+            >
+              <FaInstagram />
+            </Link>
+            <div className="w-[2px] h-24 bg-white text-center items-center"></div>
+          </div>
+        </div>
 
         <svg
           // width="300"
@@ -77,9 +113,9 @@ const HeroSection = ({}: Props) => {
             d="M292 300H0l20-20h255a5 5 0 0 0 5-5V20l20-20v292a8 8 0 0 1-8 8Z"
           ></path>
         </svg>
-        <section className="hone section grid gap-0 md:gap-[20px] grid-rows-[3fr_9fr] md:grid-rows-none md:grid-cols-[4.50fr_7.50fr] items-center  relative h-[100vh] md:w-[90vw] mx-auto md:px-[15px] lg:p-[10px] xl:p-[40px]">
+        <section className="hone section justify-evenly flex flex-col md:flex-row items-center w-[100vw]  relative h-[100vh] md:w-[90vw] mx-auto md:px-[15px] lg:p-[10px] xl:p-[40px]">
           {/* <div className="color_block hidden md:inline-block absolute bg-first-color w-[70%] h-[70%] "> */}
-          <div className="h-[220px] mt-8 md:mt-10 md:h-[550px] md:w-[500px] flex justify-center items-center rounded-[30px] bg-transparent md:bg-first-color">
+          <div className="h-[220px] mt-8 md:mt-10 md:h-[550px] md:w-[500px] flex flex-col justify-center items-center rounded-[30px] bg-transparent md:bg-first-color">
             <Image
               ref={img}
               // quality={100}
@@ -89,10 +125,38 @@ const HeroSection = ({}: Props) => {
               alt="home_images"
               className="h-[220px] w-[220px] md:h-[500px] md:w-[450px] object-cover rounded-[50%] md:rounded-[30px] shadow-[0_0_8px_hsla(0_0%_0%_0.3)] z-[1]"
             />
+            <div className="social_info flex gap-[20px] mt-6 md:hidden">
+              <Link
+                href={"https://www.linkedin.com/in/harshgupta840"}
+                target="_blank"
+                replace
+                className="social_link  !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+              >
+                <FaLinkedin />
+              </Link>
+              <Link
+                href={"https://www.github.com/harshgupta840"}
+                target="_blank"
+                replace
+                className="social_link !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+              >
+                <FaGithub />
+              </Link>
+              <Link
+                href={
+                  "https://instagram.com/harshgupta080?igshid=ZGUzMzM3NWJiOQ=="
+                }
+                target="_blank"
+                replace
+                className="social_link !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+              >
+                <FaInstagram />
+              </Link>
+            </div>
           </div>
           {/* </div> */}
           <div className="home__content flex flex-col text-center md:text-left mt-[-1rem]">
-            <div className="home__data lg:max-w-[550px] xl:max-w-[650px] 2xl:max-w-[850px] lg:mx-auto p-[12px]  md:p-[15px]">
+            <div className="home__data lg:max-w-[550px] xl:max-w-[650px] 2xl:max-w-[850px] lg:mx-auto   md:p-[15px]">
               <h1 className="home__title md:before:content-[''] md:before:absolute md:before:left-0 md:before:top-[26%] md:before:w-[48px] md:before:h-[5px] rounded-lg before:bg-first-color relative sm:text[26px] md:text-[34px] lg:text-[37px] xl:text-[48px] md:pl-[65px]">
                 <span
                   ref={text}
@@ -137,6 +201,62 @@ const HeroSection = ({}: Props) => {
           </div>
         </section>
       </section>
+      {/* <section className="mt-16 container mx-auto ">
+        <div className=" flex flex-col md:flex-row justify-around mb-[10rem]">
+          <div className="lefts w-[40%] border-first-color border-[2px] rounded-[3px] flex justify-center items-center">
+            <Image
+              src={svgs}
+              alt="freelancer"
+              className="w-[500px] h-[350px]"
+            />
+          </div>
+          <div className="details w-[40%] flex flex-col justify-center">
+            <h1 className="text-first-color text-[40px]">Freelancer</h1>
+            <p className="text-title-color text-[19px]">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
+              assumenda cumque a. Atque fuga, aspernatur ab, nihil ipsa enim
+              similique amet iusto nostrum quidem explicabo, laboriosam sapiente
+              dolorum voluptatibus pariatur.Z
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row justify-around mb-[10rem]">
+          <div className="w-[40%] flex flex-col justify-center">
+            <h1 className="text-first-color text-[40px]">React js</h1>
+            <p className="text-title-color text-[19px]">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
+              assumenda cumque a. Atque fuga, aspernatur ab, nihil ipsa enim
+              similique amet iusto nostrum quidem explicabo, laboriosam sapiente
+              dolorum voluptatibus pariatur.Z
+            </p>
+          </div>
+          <div className=" w-[40%] border-first-color border-[2px] rounded-[3px] flex justify-center items-center">
+            <Image
+              src={reactsvgs}
+              alt="react developer"
+              className="w-[500px] h-[350px] p-5"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row justify-around mb-[10rem]">
+          <div className="w-[40%] border-first-color border-[2px] rounded-[3px] flex justify-center items-center">
+            <Image
+              src={nextsvgs}
+              alt="freelancer"
+              className="w-[500px] h-[350px]"
+            />
+          </div>
+          <div className="w-[40%] flex flex-col justify-center">
+            <h1 className="text-first-color text-[40px]">Next js</h1>
+            <p className="text-title-color text-[19px]">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
+              assumenda cumque a. Atque fuga, aspernatur ab, nihil ipsa enim
+              similique amet iusto nostrum quidem explicabo, laboriosam sapiente
+              dolorum voluptatibus pariatur.Z
+            </p>
+          </div>
+        </div>
+      </section> */}
     </>
   );
 };

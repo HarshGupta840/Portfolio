@@ -1,11 +1,19 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  FaEnvelopeOpen,
+  FaPhoneSquareAlt,
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
+} from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
 import { BiLogoReact } from "react-icons/bi";
 import { BiLogoHtml5 } from "react-icons/bi";
 import { BiLogoCss3 } from "react-icons/bi";
 import { BiLogoJavascript } from "react-icons/bi";
 import { BiLogoRedux } from "react-icons/bi";
+import harsh from "../../../public/assets/Harshthemebg.jpeg";
 import { Pacific, Poppin } from "@/utils/font";
 import next from "../../../public/assets/nextjs-icon.svg";
 import node from "../../../public/assets/nodejs-logo-FBE122E377-seeklogo.com.png";
@@ -17,6 +25,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation, Pagination } from "swiper/modules";
 import { CSSPlugin, ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 
 type Props = {};
 const testimonial = [
@@ -61,6 +70,7 @@ const About = ({}: Props) => {
   }, [activeModal]);
   gsap.registerPlugin(CSSPlugin, ScrollTrigger);
   let t1 = gsap.timeline();
+  let t2 = gsap.timeline();
 
   let proxy = { skew: 0 },
     skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), // fast
@@ -77,29 +87,23 @@ const About = ({}: Props) => {
       opacity: 0,
       ease: "none",
       duration: 3,
-    })
-      .from(".skill", {
-        scrollTrigger: {
-          scrub: 1,
-          start: "clamp(top 90%)",
-          end: "clamp(top 70%)",
-          trigger: ".skill",
-        },
-        scale: 0.6,
-        ease: "none",
-        duration: 3,
-      })
-      .from(".education", {
-        scrollTrigger: {
-          scrub: 1,
-          start: "clamp(top 80%)",
-          end: "clamp(top 50%)",
-          trigger: ".education",
-        },
-        opacity: 0,
-        ease: "none",
-        duration: 3,
-      });
+    }).from(".skill", {
+      scrollTrigger: {
+        scrub: 1,
+        start: "clamp(top 90%)",
+        end: "clamp(top 70%)",
+        trigger: ".skill",
+      },
+      scale: 0.6,
+      ease: "none",
+      duration: 3,
+    });
+
+    t1.from(".education", {
+      opacity: 0,
+      ease: Power4.easeIn,
+      duration: 3,
+    });
     ScrollTrigger.create({
       onUpdate: (self) => {
         let skew = clamp(self.getVelocity() / -300);
@@ -126,21 +130,58 @@ const About = ({}: Props) => {
           About <span className="text-first-color">Me</span>
         </h1>
         <div className="grid grid-rows-1 lg:grid-cols-[4fr_8fr] gap-1 p-2">
-          <div></div>
+          <div className="flex flex-col items-center mt-[4.5rem]">
+            <Image
+              src={harsh}
+              alt="image"
+              className="rounded-[50%] object-contain object-top h-[250px] w-[250px]"
+            />
+            <div className="social_info flex gap-[20px] mt-6">
+              <Link
+                href={"https://www.linkedin.com/in/harshgupta840"}
+                target="_blank"
+                replace
+                className="social_link  !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+              >
+                <FaLinkedin />
+              </Link>
+              <Link
+                href={"https://www.github.com/harshgupta840"}
+                target="_blank"
+                replace
+                className="social_link !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+              >
+                <FaGithub />
+              </Link>
+              <Link
+                href={
+                  "https://instagram.com/harshgupta080?igshid=ZGUzMzM3NWJiOQ=="
+                }
+                target="_blank"
+                replace
+                className="social_link !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+              >
+                <FaInstagram />
+              </Link>
+            </div>
+            <Link
+              href={
+                "https://drive.google.com/file/d/1mqOlLkM9KLP1HXdSw3yDiRe8IQpVBKtN/view?usp=sharing"
+              }
+              target="_resume"
+              className="rounded border-[2px] border-solid hover:text-first-color transition-all duration-150 ease-linear border-first-color mt-8 px-4 py-2 text-white"
+            >
+              View Resume
+            </Link>
+          </div>
           <div className="flex flex-col gap-2 items-center pl-[10px]">
             <h2 className="md:text-[24px] text-[20px] lg:text-[30px] font-medium text-first-color mb-6 text-center">
               Welcome to my portfolio
             </h2>
-            <p className="text-title-color text-[16px] font-normal leading-7 text-left pl:[15px] md:pl-0 lg:text-left ">
+            <p className="text-title-color text-[18px] font-normal leading-[2rem] tracking-[2px ] text-left pl:[15px] md:pl-0 lg:text-left ">
               {/* <Balancer> */}
-              {`I'm Harsh Gupta, a dedicated and enthusiastic MERN Stack developer with a strong passion for web development and creating innovative solutions. With over one year of professional experience, I have honed my skills in building robust and scalable applications using MongoDB, Express.js, React.js,Next.js and Node.js. Additionally, I have expertise in Next.js, a powerful framework for server-rendered React applications.`}
-              <br />
-              <span className="hidden md:block">
-                {`During my journey as a developer, I have had the opportunity to work on various projects as a freelancer. These experiences have not only allowed me to apply my technical skills but have also provided me with valuable insights into client requirements and project management. The positive reviews and feedback I have received from clients have motivated me to continually enhance my abilities and deliver exceptional results.`}
-              </span>
-              <span className="hidden md:block">
-                {` Alongside my web development expertise, I am currently pursuing a Bachelor's degree in Computer Science, specializing in software development. I am in my third year of studies, which has equipped me with a strong foundation in computer science principles and problem-solving techniques. I am also proficient in programming languages such as C and C++, further expanding my versatility as a developer.`}
-              </span>
+              {`I'm Harsh Gupta, a dedicated and enthusiastic MERN Stack developer with a strong passion for web development and creating innovative solutions. With over 1+ year of professional experience, I have honed my skills in building robust and scalable applications using MongoDB, Express.js, React.js,Next.js and Node.js. Additionally, I have expertise in Next.js, a powerful framework for server-rendered React applications.`}
+
               <br />
               {` What drives me is the thrill of tackling new and challenging projects. I love pushing the boundaries of what can be achieved with technology and exploring emerging trends in the industry. Keeping up with the latest advancements and constantly expanding my knowledge are priorities for me, as I believe in staying at the forefront of the ever-evolving tech.`}
               <br />
