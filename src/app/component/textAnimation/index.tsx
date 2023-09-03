@@ -11,8 +11,8 @@ const Text = ({}: Props) => {
           1000,
           // Same substring at the start will only be typed out once, initially
           "Web Developer",
-          3000, // wait 1s before replacing "Mice" with "Hamsters"
-          "MERN Stack Developer",
+          // 3000, // wait 1s before replacing "Mice" with "Hamsters"
+          // "MERN Stack Developer",
           3000,
           "Front-end Developer",
           3000,

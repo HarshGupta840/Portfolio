@@ -1,6 +1,8 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Portfolio from "../../../public/assets/svgs/contact.svg";
 import {
   FaEnvelopeOpen,
   FaPhoneSquareAlt,
@@ -16,7 +18,10 @@ type Props = {};
 const Contact = ({}: Props) => {
   return (
     <>
-      <section className="contact section 2xl:max-w-[1250px] container mx-auto md:mt-[6rem] lg:mt-[8rem] mb-[6rem] px-6 sm:px-0">
+      <div className="fixed top-0 right-0 opacity-10 w-full h-full z-[-1]">
+        <Image src={Portfolio} alt="svg" className="h-full w-full" />
+      </div>
+      <section className="contact section 2xl:max-w-[1250px] md:h-[80vh] container mx-auto md:mt-[6rem] lg:mt-[8rem] mb-[6rem] px-6 sm:px-0">
         <h2 className="section__title  text-center text-h2 mb-8">
           Get In <span className="text-first-color">Touch</span>
         </h2>
@@ -53,14 +58,14 @@ const Contact = ({}: Props) => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="z-10">
               <Link
-                className="font-medium text-[18px]"
+                className="font-medium text-[18px] z-10"
                 href={"https://calendly.com/harshgupta840g/introductory-call"}
                 target="_blank"
                 replace
               >
-                <p className="border-[1px] text-title-color rounded-xl  hover:bg-transparent placeholder:transition-all duration-200 ease-linear border-solid border-first-color bg-first-color px-4 py-3 w-auto inline-block">
+                <p className="border-[1px] z-10 text-title-color rounded-xl  hover:bg-transparent placeholder:transition-all duration-200 ease-linear border-solid border-first-color bg-first-color px-4 py-3 w-auto inline-block">
                   Lets have a meet {">>"}
                 </p>
               </Link>
@@ -70,7 +75,7 @@ const Contact = ({}: Props) => {
                 href={"https://www.linkedin.com/in/harshgupta840"}
                 target="_blank"
                 replace
-                className="social_link  !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+                className="social_link z-10 !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
               >
                 <FaLinkedin />
               </Link>
@@ -78,7 +83,7 @@ const Contact = ({}: Props) => {
                 href={"https://www.github.com/harshgupta840"}
                 target="_blank"
                 replace
-                className="social_link !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+                className="social_link z-10 !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
               >
                 <FaGithub />
               </Link>
@@ -88,7 +93,7 @@ const Contact = ({}: Props) => {
                 }
                 target="_blank"
                 replace
-                className="social_link !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
+                className="social_link z-10 !text-[26px] flex justify-center !text-first-color bg-container-color h-[45px] w-[45px] transition-all duration-[0.3s] ease-linear hover:!text-white hover:!bg-first-color rounded-[50%] !text-center items-center"
               >
                 <FaInstagram />
               </Link>
@@ -101,39 +106,42 @@ const Contact = ({}: Props) => {
             }}
             className="contact_form"
           >
-            <div className="form_input_group grid grid-rows-1 sm:grid-cols-3 place-items-center gap-3">
-              <div className="form_input_div w-[100%] sm:w-auto">
+            <div className="form_input_group grid grid-rows-1 sm:grid-cols-3 place-items-center z-50 gap-3">
+              <div className="form_input_div w-[100%] sm:w-auto z-10">
                 <input
                   name="name"
                   required
                   type="text"
+                  autoComplete="off"
                   placeholder="Your name"
                   className="form__control border-solid border-container-color border-[1px]  bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl w-[100%] transition-all duration-[0.3s] ease-linear focus:border-first-color"
                 />
               </div>
-              <div className="form_input_div w-[100%] sm:w-auto">
+              <div className="form_input_div w-[100%] sm:w-auto z-10">
                 <input
                   type="email"
                   required
+                  autoComplete="off"
                   name="email"
                   placeholder="Your email"
                   className="form__control w-[100%] border-solid border-container-color border-[1px]  bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl transition-all duration-[0.3s] ease-linear focus:border-first-color"
                 />
               </div>
-              <div className="form_input_div w-[100%] sm:w-auto">
+              <div className="form_input_div w-[100%] sm:w-auto z-10">
                 <input
                   type="number"
                   required
                   name="contact"
                   placeholder="Your Contact "
-                  className="form__control w-[100%] border-solid border-container-color border-[1px] bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl transition-all duration-[0.3s] ease-linear focus:border-first-color"
+                  className="form__control w-[100%] z-10 border-solid border-container-color border-[1px] bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl transition-all duration-[0.3s] ease-linear focus:border-first-color"
                 />
               </div>
             </div>
-            <div className="form_input-div my-[3rem]">
+            <div className="form_input-div my-[3rem] ">
               <textarea
                 placeholder="Your message"
-                className="form_control__textarea border-solid border-container-color border-[1px]  bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl transition-all duration-[0.3s] ease-linear focus:border-first-color w-[100%] min-h-[220px] max-h-[220px]"
+                autoComplete="off"
+                className="form_control__textarea z-[1000] opacity-100 border-solid border-container-color border-[1px]  bg-container-color text-title-color text-sm py-[12px] px-[24px] rounded-3xl transition-all duration-[0.3s] ease-linear focus:border-first-color w-[100%] min-h-[220px] max-h-[220px]"
               ></textarea>
             </div>
             <div className="flex justify-center sm:justify-start">
