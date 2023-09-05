@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Montserrat } from "next/font/google";
 import Navbar from "./component/nav";
 import Theme from "./component/theme";
 import { Providers } from "./providers";
@@ -7,6 +7,10 @@ import Footer from "./component/foooter";
 export const Sans = Open_Sans({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
+});
+export const monst = Montserrat({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["cyrillic"],
 });
 
 export const metadata = {
@@ -21,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={Sans.className}>
+      <body className={monst.className}>
         <Providers>
           <section>
             <Theme />

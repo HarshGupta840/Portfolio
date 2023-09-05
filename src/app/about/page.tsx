@@ -1,13 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Portfolio from "../../../public/assets/svgs/about.svg";
-import {
-  FaEnvelopeOpen,
-  FaPhoneSquareAlt,
-  FaLinkedin,
-  FaGithub,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
 import { BiLogoReact } from "react-icons/bi";
 import { BiLogoHtml5 } from "react-icons/bi";
@@ -44,10 +38,6 @@ const About = ({}: Props) => {
   let t1 = gsap.timeline();
   let t2 = gsap.timeline();
 
-  let proxy = { skew: 0 },
-    skewSetter = gsap.quickSetter(".skewElem", "skewY", "deg"), // fast
-    clamp = gsap.utils.clamp(-15, 15); // don't let the skew go beyond 20 degrees.
-
   useEffect(() => {
     t1.from(".skill", {
       scrollTrigger: {
@@ -74,25 +64,8 @@ const About = ({}: Props) => {
     t1.from(".education", {
       opacity: 0,
       ease: Power4.easeIn,
-      duration: 3,
+      duration: 2,
     });
-    ScrollTrigger.create({
-      onUpdate: (self) => {
-        let skew = clamp(self.getVelocity() / -300);
-        // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
-        if (Math.abs(skew) > Math.abs(proxy.skew)) {
-          proxy.skew = skew;
-          gsap.to(proxy, {
-            skew: 0,
-            duration: 0.8,
-            ease: "power3",
-            overwrite: true,
-            onUpdate: () => skewSetter(proxy.skew),
-          });
-        }
-      },
-    });
-    gsap.set(".skewElem", { transformOrigin: "right center", force3D: true });
   });
   return (
     <>
@@ -101,17 +74,23 @@ const About = ({}: Props) => {
         <Image src={Portfolio} alt="svg" className="h-full w-full" />
       </div>
       <section className="container mb-[4rem] 2xl:max-w-[1250px] mx-auto">
-        <h1 className="text-title-color text-[25px] md:text-[45px] lg:text-h1 font-bold mt-[2rem] mb-[2rem] text-center">
+        <h1 className="text-title-color text-[25px] md:text-[45px] lg:text-h1 font-bold mt-[2.5rem] mb-[2rem] text-center">
           About <span className="text-first-color">Me</span>
         </h1>
         <div className="grid grid-rows-1 lg:grid-cols-[4fr_8fr] gap-1 p-2">
-          <div className="flex flex-col items-center mt-[4.5rem]">
+          <div className="flex flex-col items-center mt-0 md:mt-[4.5rem]">
             <Image
               src={harsh}
               alt="image"
               className="rounded-[50%] object-contain object-top h-[250px] w-[250px]"
             />
-            <div className="social_info flex gap-[20px] mt-6">
+            <h1
+              className={`${Pacific.className} text-first-color text-[24px] mt-4`}
+            >
+              Harsh Gupta
+            </h1>
+            <p className="text-[rgba(255,255,255,.6)] p-3">Student</p>
+            <div className="social_info flex gap-[20px] mt-2">
               <Link
                 href={"https://www.linkedin.com/in/harshgupta840"}
                 target="_blank"
@@ -149,7 +128,7 @@ const About = ({}: Props) => {
               View Resume
             </Link>
           </div>
-          <div className="flex flex-col gap-2 items-center pl-[10px]">
+          <div className="flex flex-col gap-2 mt-[2rem] md:mt-0 items-center pl-[10px]">
             <h2 className="md:text-[24px] text-[20px] lg:text-[30px] font-medium text-first-color mb-6 text-center">
               Welcome to my portfolio
             </h2>
@@ -196,7 +175,7 @@ const About = ({}: Props) => {
                     <FaGraduationCap />
                   </span>
                   <div>
-                    <p className="text-title-color">{`Class 10th (86%),2021`}</p>
+                    <p className="text-title-color">{`Class 10th (86%),2019`}</p>
                     <p className="text-[14px] text-[rgba(255,255,255,.6)]">
                       Sacred Heart School
                     </p>

@@ -12,7 +12,7 @@ const Footer = ({}: Props) => {
   };
   return (
     <>
-      <section className="h-[300px]  bg-body-color  grid grid-rows-[10fr_2fr] border-t-[2px] border-solid border-first-color ">
+      <section className="h-[270px]  bg-body-color  grid grid-rows-[9fr_3fr] border-t-[2px] border-solid border-first-color ">
         <section className="container mx-auto flex justify-between items-center">
           <div className="flex items-center justify-center gap-1 w-[80%] mx-auto  md:m-[40px_auto] ">
             <Link
@@ -50,7 +50,7 @@ const Footer = ({}: Props) => {
             </Link>
           </div>
         </section>
-        <section className="container mx-auto flex gap-10 md:gap-0 flex-col-reverse md:flex-row justify-between items-cente pb-[4rem] md:pb-2r">
+        <section className="container mx-auto flex gap-10 md:gap-0 flex-col-reverse md:flex-row justify-between items-cente pb-[4rem] md:pb-0">
           <div className="">
             <p className="text-white text-[14px] md:font-[16px] text-center">
               2023. Harsh Gupta. All Rights Reserved.

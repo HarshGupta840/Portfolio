@@ -20,7 +20,9 @@ import { gsap, Power3, Power4 } from "gsap";
 import { CSSPlugin, ScrollTrigger } from "gsap/all";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
+import "swiper/css/effect-fade";
+import { SplitText } from "gsap/SplitText";
 
 type Props = {};
 
@@ -34,22 +36,6 @@ const HeroSection = ({}: Props) => {
       message: `"I have worked personally with Harsh for 2 years simultaneously and I must really say that his work is exceptional. I have only seen his skills in the field of Web development using the MERN stack, so I can say for sure that him being a part of anyone's team in the near future is going to be a really great advantage for that team. I wish the really best for him and hope to work together again."`,
       name: `- Sarthak Gour (Graphics/UI/UX designer)`,
     },
-    {
-      message: `"I have worked personally with Harsh for 2 years simultaneously and I must really say that his work is exceptional. I have only seen his skills in the field of Web development using the MERN stack, so I can say for sure that him being a part of anyone's team in the near future is going to be a really great advantage for that team. I wish the really best for him and hope to work together again."`,
-      name: `- Sarthak Gour (Graphics/UI/UX designer)`,
-    },
-    {
-      message: `"I have worked personally with Harsh for 2 years simultaneously and I must really say that his work is exceptional. I have only seen his skills in the field of Web development using the MERN stack, so I can say for sure that him being a part of anyone's team in the near future is going to be a really great advantage for that team. I wish the really best for him and hope to work together again."`,
-      name: `- Sarthak Gour (Graphics/UI/UX designer)`,
-    },
-    {
-      message: `"I have worked personally with Harsh for 2 years simultaneously and I must really say that his work is exceptional. I have only seen his skills in the field of Web development using the MERN stack, so I can say for sure that him being a part of anyone's team in the near future is going to be a really great advantage for that team. I wish the really best for him and hope to work together again."`,
-      name: `- Sarthak Gour (Graphics/UI/UX designer)`,
-    },
-    {
-      message: `"I have worked personally with Harsh for 2 years simultaneously and I must really say that his work is exceptional. I have only seen his skills in the field of Web development using the MERN stack, so I can say for sure that him being a part of anyone's team in the near future is going to be a really great advantage for that team. I wish the really best for him and hope to work together again."`,
-      name: `- Sarthak Gour (Graphics/UI/UX designer)`,
-    },
   ];
   const [activeModal, setActiveModal] = useState<null | string>(null);
   const [modalData, setModalData] = useState({
@@ -57,11 +43,11 @@ const HeroSection = ({}: Props) => {
     name: "",
   });
   let text = useRef(null);
-  let div = useRef(null);
   let img = useRef(null);
   let p = useRef(null);
   let aboutButton = useRef(null);
   let coffeeButton = useRef(null);
+
   gsap.registerPlugin(CSSPlugin, ScrollTrigger);
   let tl = gsap.timeline();
   useEffect(() => {
@@ -255,7 +241,12 @@ const HeroSection = ({}: Props) => {
         <div className="container 2xl:max-w-[1240px]  mx-auto p-4 relative">
           {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, EffectFade, Autoplay]}
+            effect="fade"
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             navigation={{
               nextEl: ".award-swiper-next",
               prevEl: ".award-swiper-prev",
