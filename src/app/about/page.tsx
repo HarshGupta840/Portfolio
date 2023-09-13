@@ -76,7 +76,7 @@ const About = ({}: Props) => {
   return (
     <>
       {/* about me section some description and profile pic  */}
-      <div className="fixed top-0 right-0 opacity-10 w-full h-full">
+      <div className="fixed top-0 right-0 opacity-10 w-full h-full md:block hidden">
         <Image src={Portfolio} alt="svg" className="h-full w-full" />
       </div>
       <section className="container mb-[4rem] 2xl:max-w-[1250px] mx-auto">

@@ -21,7 +21,7 @@ const Contact = ({}: Props) => {
   }, []);
   return (
     <>
-      <div className="fixed top-0 right-0 opacity-10 w-full h-full z-[-1]">
+      <div className="fixed top-0 right-0 opacity-10 w-full h-full z-[-1] md:block hidden">
         <Image src={Portfolio} alt="svg" className="h-full w-full" />
       </div>
       <section className="contact section 2xl:max-w-[1250px] md:h-[80vh] container mx-auto md:mt-[6rem] lg:mt-[8rem] mb-[6rem] px-6 sm:px-0">

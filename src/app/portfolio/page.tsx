@@ -56,7 +56,7 @@ const Portfolio = ({}: Props) => {
   }, []);
   return (
     <>
-      <div className="fixed top-0 right-0 opacity-20 w-full h-full">
+      <div className="fixed top-0 right-0 opacity-20 w-full h-full md:block hidden">
         <Image src={portfolio} alt="svg" className="h-full w-full" />
       </div>
       <section className="relative ">
