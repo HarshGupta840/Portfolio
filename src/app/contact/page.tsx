@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Portfolio from "../../../public/assets/svgs/contact.svg";
 import {
   FaEnvelopeOpen,
@@ -16,6 +16,9 @@ import { Balancer } from "react-wrap-balancer";
 type Props = {};
 
 const Contact = ({}: Props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="fixed top-0 right-0 opacity-10 w-full h-full z-[-1]">

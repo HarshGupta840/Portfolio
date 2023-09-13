@@ -16,16 +16,22 @@ const projects = [
     img: project1,
     name: "Portfolio website",
     desc: "My portfolio website, showcasing my journey and skills!",
+    link: "",
+    github: "https://github.com/HarshGupta840/Portfolio",
   },
   {
     img: project2,
     name: "School Website",
     desc: "This freelance project involved a collaborative team of three, where I contributed as a full-stack developer.",
+    link: "https://pioneerpublicschooldewas.org/",
+    github: null,
   },
   {
     img: project3,
     name: "E-cell website",
     desc: "I co-developed our Entrepreneurship Cell Club website, showcasing teamwork and user-friendly design.",
+    link: "http://ecellsati.in/",
+    github: null,
   },
 ];
 
@@ -82,11 +88,11 @@ const Portfolio = ({}: Props) => {
 
 const Block = ({ data }: { data: any }) => {
   return (
-    <div className="border-[2px]  relative border-solid box-shadow border-first-color md:my-4 group  rounded-md  bg-black/70 hover:bg-black transition-all ease-linear duration-200  cursor-pointer h-[360px]   my-4 md:h-[360px]  lg:w-[490px] lg:h-[] xl:w-[400px] xl:h-[358px]  2xl:w-[550px] 2xl:h-[370px] mx-auto">
+    <div className="border-[2px] card  relative border-solid box-shadow border-first-color md:my-4   rounded-md  bg-black/70   cursor-pointer h-[360px]   my-4 md:h-[360px]  lg:w-[490px] lg:h-[] xl:w-[400px] xl:h-[358px]  2xl:w-[550px] 2xl:h-[370px] mx-auto">
       <Image
         src={data?.img}
         alt={data?.img}
-        className="rounded-lg p-0.5 h-[200px] mb-4 w-full object-cover object-center group-hover:blur-sm transition-all ease-linear duration-200 "
+        className="rounded-lg image p-0.5 h-[200px] mb-4 w-full object-cover object-center  "
       />
       <div className="px-2.5 pt-0.5 relative">
         <h1 className="xl:text-2xl md:text-xl text-base mb-2 font-bold ">
@@ -100,7 +106,7 @@ const Block = ({ data }: { data: any }) => {
       </div>
       <div className="flex justify-end mb-2 absolute bottom-2 right-2">
         <div>
-          {data ? (
+          {data.github ? (
             <button className="box-shadow px-2 py-1.5 rounded-md mx-2 ">
               <AiFillGithub size={30} color="white" />
             </button>
@@ -109,7 +115,7 @@ const Block = ({ data }: { data: any }) => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                window.open(data?.url);
+                window.open(data?.link);
               }}
               className=" px-2 py-1.5 rounded-md mx-2 "
             >

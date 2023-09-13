@@ -8,7 +8,7 @@ import { BiLogoHtml5 } from "react-icons/bi";
 import { BiLogoCss3 } from "react-icons/bi";
 import { BiLogoJavascript } from "react-icons/bi";
 import { BiLogoRedux } from "react-icons/bi";
-import harsh from "../../../public/assets/Harshthemebg.jpeg";
+import harsh from "../../../public/assets/Harshthemebg.png";
 import next from "../../../public/assets/nextjs-icon.svg";
 import node from "../../../public/assets/nodejs-logo-FBE122E377-seeklogo.com.png";
 import express from "../../../public/assets/express.svg";
@@ -49,23 +49,29 @@ const About = ({}: Props) => {
       opacity: 0,
       ease: "none",
       duration: 3,
-    }).from(".skill", {
-      scrollTrigger: {
-        scrub: 1,
-        start: "clamp(top 90%)",
-        end: "clamp(top 70%)",
-        trigger: ".skill",
-      },
-      scale: 0.6,
-      ease: "none",
-      duration: 3,
-    });
-
-    t1.from(".education", {
-      opacity: 0,
-      ease: Power4.easeIn,
-      duration: 2,
-    });
+    })
+      .from(".skill", {
+        scrollTrigger: {
+          scrub: 1,
+          start: "clamp(top 90%)",
+          end: "clamp(top 70%)",
+          trigger: ".skill",
+        },
+        scale: 0.6,
+        ease: "none",
+        duration: 3,
+      })
+      .from(".education", {
+        scrollTrigger: {
+          scrub: 1,
+          start: "clamp(top 80%)",
+          end: "clamp(top 50%)",
+          trigger: ".education",
+        },
+        opacity: 0,
+        ease: "none",
+        duration: 3,
+      });
   });
   return (
     <>

@@ -152,7 +152,7 @@ const HeroSection = ({}: Props) => {
               alt="home_images"
               className="h-[220px] w-[220px] md:h-[500px] md:w-[450px] object-cover rounded-[50%] md:rounded-[30px] shadow-[0_0_8px_hsla(0_0%_0%_0.3)] z-[1]"
             />
-            <div className="social_info flex gap-[20px] mt-6 md:hidden">
+            <div className="social_info flex gap-[20px] mt-2 md:mt-6 md:hidden">
               <Link
                 href={"https://www.linkedin.com/in/harshgupta840"}
                 target="_blank"
@@ -221,7 +221,7 @@ const HeroSection = ({}: Props) => {
                   href={"https://www.buymeacoffee.com/harsh840gupta"}
                   ref={coffeeButton}
                 >
-                  <button className="text-title-color border-[1px] border-solid border-first-color w-[155px] sm:w-[190px] sm:text-[14px] md:w-[200px] lg:w-[220px] py-3  rounded-[35px] font-medium relative mb-10px bg-first-color hover:bg-transparent transition-all duration-[0.3s] ease-linear items-center text-center flex justify-center gap-2 md:text-[15px] xl:text-[16px] text-[12px] opacity-[1]">
+                  <button className="text-title-color border-[1px] border-solid border-first-color w-[155px] sm:w-[190px] sm:text-[14px] md:w-[200px] lg:w-[220px] py-3  rounded-[35px] font-medium relative mb-10px bg-first-color hover:bg-transparent transition-all duration-[0.3s] ease-linear items-center text-center flex justify-center gap-2 md:text-[15px] xl:text-[16px] text-[12px] opacity-100">
                     <span>Buy Me a Coffee </span>
                     <PiCoffeeFill />
                   </button>
@@ -244,8 +244,8 @@ const HeroSection = ({}: Props) => {
             modules={[Navigation, Pagination, EffectFade, Autoplay]}
             effect="fade"
             autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
+              delay: 8000,
+              disableOnInteraction: true,
             }}
             navigation={{
               nextEl: ".award-swiper-next",

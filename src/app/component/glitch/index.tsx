@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import gsap, { Power4 } from "gsap";
+import { Poppin } from "@/utils/font";
 
 type Props = {};
 
@@ -31,7 +32,7 @@ const Glitch = ({}: Props) => {
       <div className="flex justify-center items-center h-screen w-full bg-border-color overflow-hidden z-[10000]">
         <h1
           ref={logo_1}
-          className="stroke animate-pulse text-[35px] md:text-[70px] xl:text-[100px]"
+          className={`stroke animate-pulse text-[35px] md:text-[70px] xl:text-[100px] ${Poppin.className}`}
         >
           DEVELOPER HARSH
         </h1>

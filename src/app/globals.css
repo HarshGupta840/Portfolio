@@ -81,18 +81,37 @@ textarea {
   transition: filter 0.3s ease;
 }
 
-.card:hover ~ image {
+.card:hover .image {
   filter: blur(4px); /* Adjust the blur amount as needed */
 }
 
-.card:hover ~ .card {
-  filter: blur(4px); /* Blur other cards on hover */
+.card:hover .card {
+  background-color: blue;
 }
 
 .card-container:hover .card:hover {
   filter: none; /* Remove blur from hovered card */
 }
 
+.transate {
+  transform: perspective(900px) rotate(60deg) scale(0.7);
+  transition: all 5s ease;
+  -webkit-transform: perspective(900px) rotate(60deg) scale(0.7);
+  -moz-transform: perspective(900px) rotate(60deg) scale(0.7);
+  -ms-transform: perspective(900px) rotate(60deg) scale(0.7);
+  -o-transform: perspective(900px) rotate(60deg) scale(0.7);
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+}
+.transate:hover {
+  transform: rotate(0deg) scale(1) translateY(10px);
+  -webkit-transform: rotate(0deg) scale(1) translateY(10px);
+  -moz-transform: rotate(0deg) scale(1) translateY(10px);
+  -ms-transform: rotate(0deg) scale(1) translateY(10px);
+  -o-transform: rotate(0deg) scale(1) translateY(10px);
+}
 @media (min-width: 1024px) {
   .inset-block {
     inset-block: 0;
