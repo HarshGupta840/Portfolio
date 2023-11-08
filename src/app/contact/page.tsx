@@ -54,7 +54,7 @@ const Contact = ({}: Props) => {
               className="contact__description overflow-y-hidden text-title-color text-[16px] leading-[1.6] mb-[10px]"
             >
               <Balancer />
-              Feel free to get in touch with me.I am always open to discussing
+              Feel free to get in touch with me. I am always open to discussing
               new projects, creative ideas or oppportunities to be part of your
               visions.
             </p>

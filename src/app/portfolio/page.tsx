@@ -10,6 +10,7 @@ import { gsap, Power3, Power4 } from "gsap";
 import { CSSPlugin, ScrollTrigger } from "gsap/all";
 import { Interface } from "readline";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Link from "next/link";
 
 type Props = {};
 interface Project {
@@ -111,7 +112,7 @@ const Portfolio = ({}: Props) => {
         </div>
       </section>
       {activeModal && (
-        <div className="fixed top-0 left-0 flex justify-center items-center h-full w-full p-4 overflow-x-hidden overflow-y-hidden  z-[1000000] bg-[#00000099]">
+        <div className="fixed top-0 left-0 flex justify-center items-center h-auto md:h-full w-full p-4 overflow-x-hidden overflow-y-hidden  z-[1000000] bg-[#00000099]">
           <div className="relative bg-black border-first-color border border-solid shadow-portfolio p-2 rounded-lg w-[95%] md:w-[650px] min-h-[650px] h-auto">
             {/* <!-- Modal content --> */}
             <div className="relative ">
@@ -155,7 +156,9 @@ const Portfolio = ({}: Props) => {
                 />
                 <div className="flex flex-col gap-1">
                   <p className="text-gray-400 text-[20px]">Description</p>
-                  <p className="text-white">{modalData?.desc}</p>
+                  <p className="text-white text-[14px] md:text-[16px]">
+                    {modalData?.desc}
+                  </p>
                 </div>
                 <div className="flex flex-col gap-1">
                   <p className="text-gray-400 text-[20px]">Technology Used</p>
@@ -163,13 +166,25 @@ const Portfolio = ({}: Props) => {
                     {modalData?.technology.map(
                       (elem: string, index: number) => {
                         return (
-                          <p className="text-white" key={index}>
+                          <p
+                            className="text-white text-[14px] md:text-[16px]"
+                            key={index}
+                          >
                             {`${index + 1}. ${elem}`}
                           </p>
                         );
                       }
                     )}
                   </div>
+                </div>
+                <div className="mt-2">
+                  <Link
+                    href={modalData?.link!}
+                    target="_blank"
+                    className="px-3 py-2 text-first-color border-first-color border-solid border rounded-md mt-2 hover:border-white hover:text-white hover:bg-first-color transition-all duration-100 ease-linear"
+                  >
+                    Visit Website
+                  </Link>
                 </div>
               </div>
             </div>

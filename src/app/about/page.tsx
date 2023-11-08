@@ -141,10 +141,10 @@ const About = ({}: Props) => {
             </div>
             <Link
               href={
-                "https://drive.google.com/file/d/1mqOlLkM9KLP1HXdSw3yDiRe8IQpVBKtN/view?usp=sharing"
+                "https://drive.google.com/file/d/137WG_NXe-SYvRgGOIiCRhuhE7ZUX1Pc1/view?usp=sharing"
               }
               target="_resume"
-              className="rounded border-[2px] z-10 border-solid hover:text-first-color transition-all duration-150 ease-linear border-first-color mt-8 px-4 py-2 text-white"
+              className="rounded border-[2px] z-10 border-solid hover:text-white text-first-color hover:bg-first-color  transition-all duration-150 ease-linear border-first-color mt-8 px-4 py-2 "
             >
               View Resume
             </Link>
