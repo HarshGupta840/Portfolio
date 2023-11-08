@@ -1,6 +1,5 @@
-import { FaHome, FaUser, FaFolderOpen, FaEnvelopeOpen } from "react-icons/fa";
+import { FaHome, FaUser, FaFolderOpen } from "react-icons/fa";
 import { SiAboutdotme } from "react-icons/si";
-import { FiFileText, FiUser, FiExternalLink } from "react-icons/fi";
 
 import Theme1 from "../../public/assets/purple.png";
 import Theme2 from "../../public/assets/red.png";

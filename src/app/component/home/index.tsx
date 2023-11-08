@@ -2,27 +2,20 @@
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
 import Profile from "../../../../public/assets/harsh.jpg";
-import Portfolio from "../../../../public/assets/svgs/portfolio.svg";
-import developer from "../../../../public/assets/svgs/developer.svg";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Balancer from "react-wrap-balancer";
 import Text from "../textAnimation";
 import { PiCoffeeFill } from "react-icons/pi";
-import { BiLogoReact } from "react-icons/bi";
-import { BiLogoHtml5 } from "react-icons/bi";
-import { BiLogoCss3 } from "react-icons/bi";
-import { BiLogoJavascript } from "react-icons/bi";
-import { BiLogoRedux } from "react-icons/bi";
 import { Pacific, Poppin } from "@/utils/font";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { gsap, Power3, Power4 } from "gsap";
 import { CSSPlugin, ScrollTrigger } from "gsap/all";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
-import "swiper/css/effect-fade";
-import { SplitText } from "gsap/SplitText";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 type Props = {};
 
@@ -77,23 +70,20 @@ const HeroSection = ({}: Props) => {
         transition: Power3.easeInOut,
       });
   }, []);
+  // ANIMATION FUNCTION
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
-      <div className="fixed top-0 right-0 opacity-20 w-full h-full">
-        <Image src={Portfolio} alt="svg" className="h-full w-full" />
-      </div>
       <section className="max-w-[100vw] w-[100vw] relative overflow-x-hidden">
-        {/* <div className="absolute top-0 right-0 opacity-20 w-full h-full">
-          <Image src={developer} alt="svg" className="h-full w-full" />
-        </div> */}
-        {/* svgs */}
         <div className="fixed md:flex justify-center items-center w-[4vw] h-[100vh] hidden">
           <div className="social_info flex flex-col text-center items-center gap-[10px] ">
             <Link
               href={"https://www.linkedin.com/in/harshgupta840"}
               target="_blank"
               replace
-              className="social_link  !text-[26px] flex justify-center !text-first-color  h-[45px] w-[45px] !text-white  rounded-[50%] !text-center items-center"
+              className="social_link   !text-[26px] flex justify-center text-first-color hover:text-white hover:bg-first-color transition-all duration-100 ease-linear  h-[45px] w-[45px]   rounded-[50%] !text-center items-center"
             >
               <FaLinkedin />
             </Link>
@@ -101,7 +91,7 @@ const HeroSection = ({}: Props) => {
               href={"https://www.github.com/harshgupta840"}
               target="_blank"
               replace
-              className="social_link !text-[26px] flex justify-center !text-first-color  h-[45px] w-[45px]  !text-white  rounded-[50%] !text-center items-center"
+              className="social_link !text-[26px] flex justify-center text-first-color hover:text-white hover:bg-first-color transition-all duration-100 ease-linear  h-[45px] w-[45px]    rounded-[50%] !text-center items-center"
             >
               <FaGithub />
             </Link>
@@ -111,38 +101,17 @@ const HeroSection = ({}: Props) => {
               }
               target="_blank"
               replace
-              className="social_link !text-[26px] flex justify-center !text-first-color  h-[45px] w-[45px] !text-white  rounded-[50%] !text-center items-center"
+              className="social_link !text-[26px] flex justify-center text-first-color hover:text-white hover:bg-first-color transition-all duration-100 ease-linear h-[45px] w-[45px]   rounded-[50%] !text-center items-center"
             >
               <FaInstagram />
             </Link>
-            <div className="w-[2px] h-24 bg-white text-center items-center"></div>
+            <div className="w-[2px] h-24 bg-first-color text-center items-center"></div>
           </div>
         </div>
-
-        <svg
-          // width="300"
-          // height="300"
-          data-name="corner-bottom-right"
-          xmlns="http://www.w3.org/2000/svg"
-          data-inlinesvg=".inlineSvgFile-5"
-          className="absolute 2xl:bottom-[100px] 2xl:right-[130px] xl:bottom-[90px] xl:right-[86px]  invisible md:visible w-[300px] h-[300px]"
-        >
-          <defs>
-            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0" className="gradient1"></stop>
-              <stop offset=".5" className="gradient2"></stop>
-              <stop offset="1" className="gradient1"></stop>
-            </linearGradient>
-          </defs>
-          <path
-            className="fill-first-color"
-            d="M292 300H0l20-20h255a5 5 0 0 0 5-5V20l20-20v292a8 8 0 0 1-8 8Z"
-          ></path>
-        </svg>
         <section className="hone section justify-evenly flex flex-col md:flex-row items-center w-[100vw]  relative h-[100vh] md:w-[90vw] mx-auto md:px-[15px] lg:p-[10px] xl:p-[40px]">
           {/* <div className="color_block hidden md:inline-block absolute bg-first-color w-[70%] h-[70%] "> */}
 
-          <div className="h-[220px] mt-8 md:mt-10 md:h-[550px] md:w-[500px] flex flex-col justify-center items-center rounded-[30px] bg-transparent md:bg-first-color">
+          <div className="h-[220px] mt-8 md:mt-10 md:h-[550px] md:w-[500px] flex flex-col justify-center items-center rounded-[30px] bg-transparent">
             <Image
               ref={img}
               // quality={100}
@@ -184,21 +153,23 @@ const HeroSection = ({}: Props) => {
           {/* </div> */}
           <div className="home__content flex flex-col text-center md:text-left mt-[-1rem]">
             <div className="home__data lg:max-w-[550px] xl:max-w-[650px] 2xl:max-w-[850px] lg:mx-auto   md:p-[15px]">
-              <h1 className="home__title md:before:content-[''] md:before:absolute md:before:left-0 md:before:top-[26%] md:before:w-[48px] md:before:h-[5px] rounded-lg before:bg-first-color relative sm:text[26px] md:text-[34px] lg:text-[37px] xl:text-[48px] md:pl-[65px]">
+              <h1 className="home__title md:before:content-[''] md:before:absolute md:before:left-0 md:before:top-[50%] md:before:w-[48px] md:before:h-[5px] rounded-lg before:bg-first-color relative sm:text[26px] md:text-[34px] lg:text-[37px] xl:text-[48px] md:pl-[65px]">
                 <span
                   ref={text}
-                  className="block text-first-color text-[29px] sm:text-[30px] md:text-[40px] lg:text-[46px] 2xl:text-h1"
+                  className="block text-first-color text-[29px] sm:text-[30px] md:text-[38px] lg:text-[38px]"
                 >
                   I am Harsh Gupta.
                 </span>
-                <Text />
               </h1>
+              <span className="text-white text-[38px] font-semibold pl-[40px]">
+                <Text />
+              </span>
               <p
                 ref={p}
-                className="hero__description leading-loose mx-32px my-[16px]  md:mb-[40px] text-title-color text-[15px] md:text-[15px] xl:text[19px] 2xl:text-[22px]"
+                className="hero__description leading-loose mx-32px my-[16px]  md:mb-[40px] text-title-color text-[15px] md:text-[15px] xl:text[18px] 2xl:text-[18px]"
               >
                 <Balancer>
-                  Experienced MERN Stack and Next.js developer with 1 years of
+                  Experienced MERN Stack and Next.js developer with 1.5 years of
                   experience. Skilled in building robust web applications,
                   utilizing MongoDB, Express.js, React, and Node.js. Proficient
                   in front-end development, responsive design, and API
@@ -219,6 +190,7 @@ const HeroSection = ({}: Props) => {
                 </Link>
                 <Link
                   href={"https://www.buymeacoffee.com/harsh840gupta"}
+                  target="_blank"
                   ref={coffeeButton}
                 >
                   <button className="text-title-color border-[1px] border-solid border-first-color w-[155px] sm:w-[190px] sm:text-[14px] md:w-[200px] lg:w-[220px] py-3  rounded-[35px] font-medium relative mb-10px bg-first-color hover:bg-transparent transition-all duration-[0.3s] ease-linear items-center text-center flex justify-center gap-2 md:text-[15px] xl:text-[16px] text-[12px] opacity-100">
@@ -234,15 +206,21 @@ const HeroSection = ({}: Props) => {
       {/* <div className="h-1 bg-first-color"></div> */}
       <section className="  mb-[10rem]">
         <h2
-          className={`text-[20px] pt-[4rem] text-first-color md:text-[45px] font-medium text-center ${Poppin.className}`}
+          className={`text-[20px] pt-[4rem] text-first-color md:text-[45px] overflow-y-hidden font-medium text-center ${Poppin.className}`}
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           Endorsements
         </h2>
-        <div className="container 2xl:max-w-[1240px]  mx-auto p-4 relative">
+        <div
+          className="container 2xl:max-w-[1240px]  mx-auto p-4 relative"
+          data-aos="zoom-in"
+          data-aos-delay="10"
+          data-aos-duration="1000"
+        >
           {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
           <Swiper
-            modules={[Navigation, Pagination, EffectFade, Autoplay]}
-            effect="fade"
+            modules={[Navigation, Pagination, Autoplay]}
             autoplay={{
               delay: 8000,
               disableOnInteraction: true,

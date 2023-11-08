@@ -19,6 +19,9 @@ import gsap, { Power4 } from "gsap";
 import { CSSPlugin, ScrollTrigger } from "gsap/all";
 import Link from "next/link";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 type Props = {};
 
 const About = ({}: Props) => {
@@ -27,6 +30,11 @@ const About = ({}: Props) => {
     message: "",
     name: "",
   });
+
+  // ANIMATION FUNCTION
+  useEffect(() => {
+    AOS.init();
+  }, []);
   useEffect(() => {
     if (activeModal !== null) document.body.style.overflow = "hidden";
     else
@@ -76,11 +84,13 @@ const About = ({}: Props) => {
   return (
     <>
       {/* about me section some description and profile pic  */}
-      <div className="fixed top-0 right-0 opacity-10 w-full h-full md:block hidden">
-        <Image src={Portfolio} alt="svg" className="h-full w-full" />
-      </div>
       <section className="container mb-[4rem] 2xl:max-w-[1250px] mx-auto">
-        <h1 className="text-title-color text-[25px] md:text-[45px] lg:text-h1 font-bold mt-[2.5rem] mb-[2rem] text-center">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          aos-delay="1000"
+          className="text-title-color text-[25px] md:text-[45px] lg:text-h1 overflow-y-hidden font-bold mt-[2.5rem] mb-[2rem] text-center"
+        >
           About <span className="text-first-color">Me</span>
         </h1>
         <div className="grid grid-rows-1 lg:grid-cols-[4fr_8fr] gap-1 p-2">
@@ -88,10 +98,15 @@ const About = ({}: Props) => {
             <Image
               src={harsh}
               alt="image"
-              className="rounded-[50%] object-contain object-top h-[250px] w-[250px]"
+              data-aos="zoom-out"
+              data-aos-delay="30"
+              data-aos-duration="1000"
+              className="rounded-[50%] object-contain object-top overflow-y-hidden h-[250px] w-[250px]"
             />
             <h1
               className={`${Pacific.className} text-first-color text-[24px] mt-4`}
+              data-aos="zoom-in"
+              data-aos-duration="2000"
             >
               Harsh Gupta
             </h1>
@@ -138,10 +153,15 @@ const About = ({}: Props) => {
             <h2 className="md:text-[24px] text-[20px] lg:text-[30px] font-medium text-first-color mb-6 text-center">
               Welcome to my portfolio
             </h2>
-            <p className="text-title-color text-[18px] font-normal leading-[2rem] tracking-[2px] text-left pl:[15px] md:pl-0 lg:text-left ">
+            <p
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              className="text-title-color text-[18px] font-normal leading-[2rem] tracking-[2px] text-left pl:[15px] md:pl-0 lg:text-left "
+            >
               {/* <Balancer> */}
               {`I'm Harsh Gupta, a dedicated and enthusiastic MERN Stack developer with a strong passion for web development and creating innovative solutions. With over 1+ year of professional experience, I have honed my skills in building robust and scalable applications using MongoDB, Express.js, React.js,Next.js and Node.js. Additionally, I have expertise in Next.js, a powerful framework for server-rendered React applications.`}
 
+              <br />
               <br />
               {` What drives me is the thrill of tackling new and challenging projects. I love pushing the boundaries of what can be achieved with technology and exploring emerging trends in the industry. Keeping up with the latest advancements and constantly expanding my knowledge are priorities for me, as I believe in staying at the forefront of the ever-evolving tech.`}
               <br />

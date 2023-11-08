@@ -117,3 +117,16 @@ textarea {
     inset-block: 0;
   }
 }
+
+.parent:hover > :not(:hover) {
+  transition: all 0.6s ease-in;
+  filter: blur(4px);
+  -webkit-transition: all 0.6s ease-in;
+  -moz-transition: all 0.6s ease-in;
+  -ms-transition: all 0.6s ease-in;
+  -o-transition: all 0.6s ease-in;
+}
+
+.shadow-portfolio {
+  box-shadow: var(--first-color) 0px 5px 15px;
+}
