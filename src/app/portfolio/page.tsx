@@ -112,7 +112,8 @@ const Portfolio = ({}: Props) => {
         </div>
       </section>
       {activeModal && (
-        <div className="fixed top-0 left-0 flex justify-center items-center h-auto md:h-full w-full p-4 overflow-x-hidden overflow-y-hidden  z-[1000000] bg-[#00000099]">
+        <div className="fixed top-0 left-0 grid justify-center items-center w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full  z-[1000000] bg-[#00000099]">
+          {/* fixed top-0 left-0 grid justify-center items-center  w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full z-[10000]  */}
           <div className="relative bg-black border-first-color border border-solid shadow-portfolio p-2 rounded-lg w-[95%] md:w-[650px] min-h-[650px] h-auto">
             {/* <!-- Modal content --> */}
             <div className="relative ">

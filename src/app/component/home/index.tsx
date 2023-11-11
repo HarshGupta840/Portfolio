@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
 import Profile from "../../../../public/assets/harsh.jpg";
+import Profilemobile from "../../../../public/assets/harsh-mobile.png";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Balancer from "react-wrap-balancer";
@@ -119,7 +120,16 @@ const HeroSection = ({}: Props) => {
               // width={50}
               src={Profile}
               alt="home_images"
-              className="h-[220px] w-[220px] md:h-[500px] md:w-[450px] object-cover rounded-[50%] md:rounded-[30px] shadow-[0_0_8px_hsla(0_0%_0%_0.3)] z-[1]"
+              className="h-[220px] md:inline-block hidden w-[220px] md:h-[500px] md:w-[450px] object-cover rounded-[50%] md:rounded-[30px] shadow-[0_0_8px_hsla(0_0%_0%_0.3)] z-[1]"
+            />
+            <Image
+              ref={img}
+              // quality={100}
+              // height={50}
+              // width={50}
+              src={Profilemobile}
+              alt="home_images"
+              className="h-[220px] md:hidden w-[220px] object-cover rounded-[50%] md:rounded-[30px] shadow-[0_0_8px_hsla(0_0%_0%_0.3)] z-[1]"
             />
             <div className="social_info flex gap-[20px] mt-2 md:mt-6 md:hidden">
               <Link
@@ -151,7 +161,7 @@ const HeroSection = ({}: Props) => {
             </div>
           </div>
           {/* </div> */}
-          <div className="home__content flex flex-col text-center md:text-left mt-[-1rem]">
+          <div className="home__content flex flex-col text-center p-2 md:text-left mt-[-1rem]">
             <div className="home__data lg:max-w-[550px] xl:max-w-[650px] 2xl:max-w-[850px] lg:mx-auto   md:p-[15px]">
               <h1 className="home__title md:before:content-[''] md:before:absolute md:before:left-0 md:before:top-[50%] md:before:w-[48px] md:before:h-[5px] rounded-lg before:bg-first-color relative sm:text[26px] md:text-[34px] lg:text-[37px] xl:text-[48px] md:pl-[65px]">
                 <span
@@ -161,21 +171,19 @@ const HeroSection = ({}: Props) => {
                   I am Harsh Gupta.
                 </span>
               </h1>
-              <span className="text-white text-[38px] font-semibold pl-[40px]">
+              <span className="text-white text-[29px] md:text-[38px] font-semibold pl-[40px]">
                 <Text />
               </span>
               <p
                 ref={p}
-                className="hero__description leading-loose mx-32px my-[16px]  md:mb-[40px] text-title-color text-[15px] md:text-[15px] xl:text[18px] 2xl:text-[18px]"
+                className="hero__description balance leading-loose mx-32px my-[16px]  md:mb-[40px] text-title-color text-[15px] md:text-[15px] xl:text[18px] 2xl:text-[18px]"
               >
-                <Balancer>
-                  Experienced MERN Stack and Next.js developer with 1.5 years of
-                  experience. Skilled in building robust web applications,
-                  utilizing MongoDB, Express.js, React, and Node.js. Proficient
-                  in front-end development, responsive design, and API
-                  integration. Committed to delivering high-quality code and
-                  exceeding client expectations.
-                </Balancer>
+                Experienced MERN Stack and Next.js developer with 1.5 years of
+                experience. Skilled in building robust web applications,
+                utilizing MongoDB, Express.js, React, and Node.js. Proficient in
+                front-end development, responsive design, and API integration.
+                Committed to delivering high-quality code and exceeding client
+                expectations.
               </p>
               <div className="flex justify-between sm:justify-evenly md:justify-between flex-row items-center">
                 <Link
@@ -206,7 +214,7 @@ const HeroSection = ({}: Props) => {
       {/* <div className="h-1 bg-first-color"></div> */}
       <section className="  mb-[10rem]">
         <h2
-          className={`text-[20px] pt-[4rem] text-first-color md:text-[45px] overflow-y-hidden font-medium text-center ${Poppin.className}`}
+          className={`text-[23px] pt-[4rem] text-first-color md:text-[45px] overflow-y-hidden font-medium text-center ${Poppin.className}`}
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -235,15 +243,15 @@ const HeroSection = ({}: Props) => {
               return (
                 <>
                   <SwiperSlide key={index}>
-                    <div className="bg-gray-800 rounded-lg md:h-[350px]  overflow-hidden shadow-lg ">
+                    <div className="bg-black border-first-color border-solid border  rounded-lg h-[280px] md:h-[350px]  overflow-hidden shadow-lg ">
                       <div className="p-6 md:flex md:flex-col md:justify-between h-full pb-4">
                         <p
-                          className={`text-gray-300 text-lg md:leading-[2.1rem] md:tracking-[3px] ${Poppin.className} line-clamp-5 md:line-clamp-none`}
+                          className={`text-gray-300 text-sm md:text-lg balance md:leading-[2.1rem] md:tracking-[3px] ${Poppin.className} line-clamp-6  md:line-clamp-none`}
                         >
                           {elem.message}
                         </p>
                         <button
-                          className="bg-transparent border-transparent pt-5 cursor-pointer decoration-dotted decoration-underline md:hidden"
+                          className="bg-transparent border-first-color border border-solid text-first-color mt-3 px-2 py-1 rounded  cursor-pointer  md:hidden"
                           onClick={() => {
                             setActiveModal("elem");
                             setModalData({
@@ -303,18 +311,18 @@ const HeroSection = ({}: Props) => {
       </section>
       {/* for modals  */}
       {activeModal && (
-        <div className="fixed top-0 left-0 grid justify-center items-center  w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full z-[10000]">
-          <div className="relative w-full max-w-2xl max-h-full">
+        <div className="fixed top-0 left-0 grid justify-center items-center  w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full z-[10000] bg-[#00000099]">
+          <div className="relative bg-black border-first-color border border-solid shadow-portfolio rounded-md balance w-full max-w-2xl max-h-full">
             {/* <!-- Modal content --> */}
-            <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div className="relative  rounded-lg shadow ">
               {/* <!-- Modal header --> */}
               <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-first-color">
                   Endorsement
                 </h3>
                 <button
                   onClick={() => setActiveModal(null)}
-                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="text-white bg-transparent rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
                   data-modal-hide="defaultModal"
                 >
                   <svg
@@ -336,9 +344,11 @@ const HeroSection = ({}: Props) => {
                 </button>
               </div>
               {/* <!-- Modal body --> */}
-              <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg skewElem">
+              <div className="rounded-lg overflow-hidden shadow-lg skewElem">
                 <div className="p-6 flex flex-col gap-7">
-                  <p className="text-gray-300 text-lg">{modalData.message}</p>
+                  <p className="text-white text-md balance">
+                    {modalData.message}
+                  </p>
                   <p className="text-gray-500">{modalData.name}</p>
                 </div>
               </div>

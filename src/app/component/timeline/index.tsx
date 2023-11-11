@@ -78,13 +78,13 @@ const Timeline = ({}: Props) => {
       <div className="flex flex-col justify-center ">
         <div className="w-full px-4 mx-auto lg:max-w-5xl ">
           <div className="relative">
-            <div className="height absolute hidden w-1 h-full transform -translate-x-1/2 bg-[#c9e2f5] dark:bg-gray-700 lg:block left-1/2"></div>
+            <div className="height absolute hidden w-1 h-full transform -translate-x-1/2 border-first-color border border-solid bg-black lg:block left-1/2"></div>
             <div className="space-y-2 lg:space-y-4">
               <div className="leftBox1">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-start w-full mx-auto">
                     <div className="w-full lg:w-1/2 lg:pr-8">
-                      <div className="relative flex-1 mb-10 bg-white rounded shadow lg:mb-8 dark:bg-gray-900">
+                      <div className="relative flex-1 mb-10 bg-black border-first-color border-solid border rounded shadow py-1 lg:mb-8">
                         <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-3 -right-4">
                           <div className="hidden h-10 origin-bottom-left transform -rotate-45 bg-white shadow lg:block dark:bg-gray-900"></div>
                         </div>
@@ -139,7 +139,7 @@ const Timeline = ({}: Props) => {
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-end w-full mx-auto">
                     <div className="w-full lg:w-1/2 lg:pl-8">
-                      <div className="relative flex-1 mb-10 bg-white rounded shadow lg:mb-8 dark:bg-gray-900">
+                      <div className="relative flex-1 mb-10 bg-black border-first-color border-solid border rounded shadow py-1">
                         <div className="absolute inline-block w-4 overflow-hidden -translate-y-1/2 top-7 -left-4">
                           <div className="hidden h-10 origin-top-right transform -rotate-45 bg-white dark:bg-gray-900 lg:block drop-shadow-lg"></div>
                         </div>

@@ -138,3 +138,7 @@ textarea {
 .shadow-portfolio {
   box-shadow: var(--first-color) 0px 5px 15px;
 }
+
+.balance {
+  text-wrap: balance;
+}
