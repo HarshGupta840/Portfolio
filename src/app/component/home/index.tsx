@@ -120,7 +120,7 @@ const HeroSection = ({}: Props) => {
               // width={50}
               src={Profile}
               alt="home_images"
-              className="h-[220px] md:inline-block hidden w-[220px] md:h-[500px] md:w-[450px] object-cover rounded-[50%] md:rounded-[30px] shadow-[0_0_8px_hsla(0_0%_0%_0.3)] z-[1]"
+              className=" md:inline-block hidden md:h-[500px] md:w-[450px] object-cover rounded-[30px] border-solid border-first-color border-[2px] shadow-[0_0_8px_hsla(0_0%_0%_0.3)] z-[1]"
             />
             <Image
               ref={img}
@@ -171,7 +171,7 @@ const HeroSection = ({}: Props) => {
                   I am Harsh Gupta.
                 </span>
               </h1>
-              <span className="text-white text-[29px] md:text-[38px] font-semibold pl-[40px]">
+              <span className="text-white text-[29px] md:text-[38px] font-semibold mb-1 pl-[40px]">
                 <Text />
               </span>
               <p
@@ -211,7 +211,81 @@ const HeroSection = ({}: Props) => {
           </div>
         </section>
       </section>
-      {/* <div className="h-1 bg-first-color"></div> */}
+      {/* how do i work  */}
+      <section className="w-full bg-black">
+        <h1 className="text-center text-first-color text-[33px] p-4 mb-3">
+          How Do I Work
+        </h1>
+        <div className="grid grid-cols-2 md:grid-cols-3 md:gap-3 xl:grid-cols-5 w-[90%] pb-6  mx-auto">
+          <div className="border-solid w-[240px] border-first-color border rounded-md p-2">
+            <h1 className="text-[16px] text-first-color font-semibold mb-1 ">
+              01. Understand Your Vision
+            </h1>
+            <div className="text-white text-[13px]">
+              It all starts with a conversation between you and me. I want to
+              hear about your dreams, ideas, and goals for your project. Your
+              vision is my compass.
+            </div>
+          </div>
+          <div className="border-solid w-[240px] border-first-color border rounded-md p-2">
+            <h1 className="text-[16px] text-first-color font-semibold mb-1 ">
+              02 Craft the Blueprint
+            </h1>
+            <div className="text-white text-[13px]">
+              Armed with your vision, I get to work planning the perfect
+              blueprint. Think of it as the roadmap for our creative and
+              technical journey together—just you and me.
+            </div>
+          </div>
+          <div className="border-solid w-[240px] border-first-color border rounded-md p-2">
+            <h1 className="text-[16px] text-first-color font-semibold mb-1 ">
+              03 Design Showcase
+            </h1>
+            <div className="text-white text-[13px]">
+              Now for the exciting part! I channel my creativity to design
+              multiple skins that bring your vision to life. It&aps;s like
+              trying on outfits for your project—pick the one that resonates
+              with you, and we&apos;ll refine it until it&apos;s perfect.
+            </div>
+          </div>
+          <div className="border-solid w-[240px] border-first-color border rounded-md p-2">
+            <h1 className="text-[16px] text-first-color font-semibold mb-1 ">
+              04 Building the Magic
+            </h1>
+            <div className="text-white text-[13px]">
+              With your design choice locked in, I roll up my sleeves and dive
+              into the nuts and bolts. From crafting the frontend to the
+              backend, pages, and all those special features—it&apos;s a
+              one-person show dedicated to making your project stand out.
+            </div>
+          </div>
+          <div className="border-solid w-[240px] border-first-color border rounded-md p-2">
+            <h1 className="text-[16px] text-first-color font-semibold mb-1 ">
+              05 Unveiling Your Creation
+            </h1>
+            <div className="text-white text-[13px]">
+              The moment you&apos;ve been waiting for! I open the curtains and
+              reveal your completed project. But it&apos;s not just a show—I
+              hand you all the access you need. Take a stroll through your
+              creation, kick the tires, and let me know if anything needs
+              fine-tuning.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-[80%] mx-auto bg-first-color mt-[9rem] pb-3 rounded-md  flex flex-col  gap-4">
+        <h1 className="text-white text-center pt-4 text-[22px]">
+          Let&apos;s connect to start your project.
+        </h1>
+        <div className="w-full flex justify-center">
+          <Link
+            href={"/contact"}
+            className="px-3 py-1 font-semibold text-center hover:scale-[1.1] transition-all duration-100 ease-linear text-white border-[2px] border-solid border-white rounded-md "
+          >
+            Connect
+          </Link>
+        </div>
+      </section>
       <section className="  mb-[10rem]">
         <h2
           className={`text-[23px] pt-[4rem] text-first-color md:text-[45px] overflow-y-hidden font-medium text-center ${Poppin.className}`}
@@ -317,7 +391,7 @@ const HeroSection = ({}: Props) => {
             <div className="relative  rounded-lg shadow ">
               {/* <!-- Modal header --> */}
               <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                <h3 className="text-xl font-semibold text-first-color">
+                <h3 className="text-xl font-semibold mb-1 text-first-color">
                   Endorsement
                 </h3>
                 <button
