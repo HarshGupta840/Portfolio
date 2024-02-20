@@ -142,3 +142,7 @@ textarea {
 .balance {
   text-wrap: balance;
 }
+
+.li-icon::before {
+  content: "✔";
+}

@@ -16,6 +16,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import AOS from "aos";
+import development from "../../../../public/assets/svgs/development.svg";
+import seo from "../../../../public/assets/svgs/seo.svg";
 import "aos/dist/aos.css";
 
 type Props = {};
@@ -77,7 +79,8 @@ const HeroSection = ({}: Props) => {
   }, []);
   return (
     <>
-      <section className="max-w-[100vw] w-[100vw] relative overflow-x-hidden">
+      {/* intro about me  */}
+      <section className="max-w-[100vw] w-[100vw] relative overflow-x-hidden bg-black">
         <div className="fixed md:flex justify-center items-center w-[4vw] h-[100vh] hidden">
           <div className="social_info flex flex-col text-center items-center gap-[10px] ">
             <Link
@@ -211,13 +214,64 @@ const HeroSection = ({}: Props) => {
           </div>
         </section>
       </section>
+      {/* services that i do provide  */}
+      <div className=" flex flex-col gap-[7rem] mt-[8rem] mb-[9rem] mx-auto w-[90%] md:w-[80%]">
+        <div className="flex flex-col-reverse gap-4 md:grid w-full mx-auto grid-col-2  lg:grid-rows-none lg:grid-cols-2 h-auto">
+          <div className="flex flex-col gap-4 ">
+            <h1 className="!text-[35px] text-first-color">Web Development</h1>
+            <p className="text-white text-[18px]  leading-[2rem]">
+              I provide exceptional web development services, crafting top-tier
+              websites that shine online. With over 1.5 years of dedicated
+              experience in the field, I am committed to delivering premium
+              solutions to my clients at a competitive cost. My skill set
+              encompasses various types of web-based software development,
+              including website development, eCommerce site development,
+              WordPress site development, and responsive website development.
+              When you choose me, youa&apos;re choosing a dedicated professional
+              who prioritizes quality and customer satisfaction above all else.
+            </p>
+            <ul className="text-[18px] gap-2 text-white">
+              <li className="li-icon">Next js</li>
+              <li className="li-icon">React js</li>
+              <li className="li-icon">Node js</li>
+            </ul>
+          </div>
+          <div className=" order-1">
+            <Image className="h-[35vh]" src={development} alt="svg" />
+          </div>
+        </div>
+        <div className="grid w-full mx-auto lg:grid-rows-none grid-rows-[30%_70%] gap-4 lg:grid-cols-2 h-auto">
+          <div className="h-auto">
+            <Image className="h-[35vh]" src={seo} alt="svg" />
+          </div>
+          <div className="flex flex-col gap-4">
+            <h1 className="!text-[35px]  text-first-color">
+              Website Optimization
+            </h1>
+            <p className="text-white text-[18px]  leading-[2rem]">
+              For any website, site optimization is the most crucial component.
+              Site optimization is crucial if you want to give your visitors a
+              seamless and satisfying online experience. We provide professional
+              site optimization, user intent, content marketing, better
+              page speed, Search Engine Optimisation (SEO), and user experience.
+              Your page will appear highly in search results thanks to our
+              service.
+            </p>
+            <ul className="text-[18px] text-white">
+              <li className="li-icon">Reduce load time</li>
+              <li className="li-icon">Optimize image</li>
+              <li className="li-icon">Rank up website</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       {/* how do i work  */}
-      <section className="w-full bg-black">
-        <h1 className="text-center text-first-color text-[33px] p-4 mb-3">
+      <section className="w-full mb-[3rem] bg-black">
+        <h1 className="text-center text-first-color text-[33px] p-4 mb-3 after:w-[40px] after:h-[2px] after:text-first-color">
           How Do I Work
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 md:gap-3 xl:grid-cols-5 w-[90%] pb-6  mx-auto">
-          <div className="border-solid w-[240px] border-first-color border rounded-md p-2">
+        <div className="grid grid-cols-1  place-items-center md:place-items-stretch md:grid-cols-3 gap-4 md:gap-3 xl:grid-cols-5 w-[90%] pb-[4.5rem]  mx-auto">
+          <div className="border-solid w-[240px] border-first-color border rounded-md p-4">
             <h1 className="text-[16px] text-first-color font-semibold mb-1 ">
               01. Understand Your Vision
             </h1>
@@ -273,8 +327,9 @@ const HeroSection = ({}: Props) => {
           </div>
         </div>
       </section>
-      <section className="w-[80%] mx-auto bg-first-color mt-[9rem] pb-3 rounded-md  flex flex-col  gap-4">
-        <h1 className="text-white text-center pt-4 text-[22px]">
+      {/* connect  */}
+      <section className="md:w-[60%] w-[80%] mx-auto  mt-[9rem] pb-3 rounded-md  flex flex-col bg-first-color  gap-4">
+        <h1 className="text-white text-center pt-4 md:text-[22px] text-[18px] lg:text-[28px]">
           Let&apos;s connect to start your project.
         </h1>
         <div className="w-full flex justify-center">
@@ -286,6 +341,7 @@ const HeroSection = ({}: Props) => {
           </Link>
         </div>
       </section>
+      {/* Endoresments  */}
       <section className="  mb-[10rem]">
         <h2
           className={`text-[23px] pt-[4rem] text-first-color md:text-[45px] overflow-y-hidden font-medium text-center ${Poppin.className}`}
@@ -312,6 +368,7 @@ const HeroSection = ({}: Props) => {
               prevEl: ".award-swiper-prev",
             }}
             slidesPerView={1}
+            spaceBetween={30}
           >
             {testimonial.map((elem: any, index: number) => {
               return (
@@ -320,7 +377,7 @@ const HeroSection = ({}: Props) => {
                     <div className="bg-black border-first-color border-solid border  rounded-lg h-[280px] md:h-[350px]  overflow-hidden shadow-lg ">
                       <div className="p-6 md:flex md:flex-col md:justify-between h-full pb-4">
                         <p
-                          className={`text-gray-300 text-sm md:text-lg balance md:leading-[2.1rem] md:tracking-[3px] ${Poppin.className} line-clamp-6  md:line-clamp-none`}
+                          className={`text-gray-300 text-sm md:text-lg  md:leading-[2.1rem] md:tracking-[3px] ${Poppin.className} line-clamp-6  md:line-clamp-none`}
                         >
                           {elem.message}
                         </p>
