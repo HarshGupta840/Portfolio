@@ -34,10 +34,10 @@ This repository contains the source code for my personal portfolio website. It s
 * **Styling:** Customize the styles by editing the CSS files or utilizing CSS-in-JS libraries like styled components.
 * **Add New Projects:** Include details of your new projects by creating new components or modifying existing ones in the components/projects directory.
 
-  ## Deployment
-  To deploy your portfolio, you can use platforms like Vercel, Netlify, or GitHub Pages. Simply follow their respective deployment guides to publish your website.
+## Deployment
+To deploy your portfolio, you can use platforms like Vercel, Netlify, or GitHub Pages. Simply follow their respective deployment guides to publish your website.
 
-  ## Technologies Used
+## Technologies Used
 
   * Next.js
   * Tailwind css
